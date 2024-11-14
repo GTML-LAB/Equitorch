@@ -93,6 +93,7 @@ def rms(x: Tensor, L: DegreeRange, additional_dims: int | Tuple[int,...] = -1,
     When :obj:`degree_wise`, it is computed as 
 
     .. math::
+
         \text{RMS}^{(l)}=\sqrt{\mathop{\text{mean}}_{i\text{ over additional dims}}
         \left[\frac{1}{\text{scale}_l}\sum_{m=-l}^{l}
         \big(\mathbf{x}_{i,m}^{(l)}\big)^2\right]},
@@ -100,6 +101,7 @@ def rms(x: Tensor, L: DegreeRange, additional_dims: int | Tuple[int,...] = -1,
     otherwise as
 
     .. math::
+
         \text{RMS}=\sqrt{\mathop{\text{mean}}_{i\text{ over additional dims}}
         \left[\frac{1}{|L|}\sum_{l\in L}\frac{1}{\text{scale}_l}\sum_{m=-l}^{l}
         \big(\mathbf{x}_{i,m}^{(l)}\big)^2\right]},
@@ -208,6 +210,7 @@ def rms(x: Tensor, L: DegreeRange, additional_dims: int | Tuple[int,...] = -1,
         >>> print(norm4.shape)
         torch.Size([2, 4])
     """
+
     additional_dims = (additional_dims,) if isinstance(additional_dims, int) else additional_dims
     if not degree_wise:
         mean_dims = (-2,) + additional_dims
@@ -305,7 +308,7 @@ __all__ = [
     'dot',
     'norm',
     'norm2',
-    'rms'
+    'rms',
     'sht',
     'isht',
     's2_grid'

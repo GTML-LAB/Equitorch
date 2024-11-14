@@ -15,7 +15,7 @@ Throughout the past several years, the paradigm of message passing neural networ
 
 where :math:`\phi` is a message function that generate messages from both source node, target node and the edge; :math:`\bigoplus` is a differentiable, permutation-invariant function that aggregates messages from each nodes of the neighbor :math:`\mathcal{N}(i)` and :math:`\gamma` is the update function that computes the new node embeddings considering the current embedding and the aggregated messages. 
 
-In conventional GNNs, the functions above is typically the scalar functions. However, if we are dealing geometric graphs where the nodes and edges contain geometric and physical information like position :math:`\{\mathbf{r}_i\}` and relative position :math:`\{\mathbf{r}_{j,i}\}`, we should should equivariant functions for all the message, aggregation and updating functions to form an equivariant message passsing neural network.
+In conventional GNNs, the functions above is typically the scalar functions. However, if we are dealing geometric graphs where the nodes and edges contain geometric and physical information like position :math:`\{\mathbf{r}_i\}` and relative position :math:`\{\mathbf{r}_{j,i}\}`, we should use equivariant functions for all the message, aggregation and updating functions to form an equivariant message passsing neural network.
 
 .. figure:: ./imgs/4_MPNN.png
     :align: center

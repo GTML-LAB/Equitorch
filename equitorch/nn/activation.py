@@ -176,7 +176,7 @@ class S2Act(nn.Module):
     
     The :math:`\mathrm{SHT}` and :math:`\mathrm{ISHT}` are spherical harmonic 
     transformation and inverse spherical harmonic transformation, respectively. 
-    (See :obj:`sht`, :obj:`isht`.)
+    (See :obj:`~equitorch.math.sht`, :obj:`~equitorch.math.isht`.)
 
     Warning
     -------
