@@ -114,10 +114,6 @@ def rms(x: Tensor, L: DegreeRange, additional_dims: int | Tuple[int,...] = -1,
     while setting :obj:`degree_wise=False`, :obj:`degree_scale=True` will lead to the RMS 
     used in `EquiformerV2: Improved Equivariant Transformer for Scaling to Higher-Degree Representations <https://arxiv.org/abs/2306.12059>`_.
 
-    Warning
-    -------
-    For gradient issues at zero, we add 1e-20 to the mean square and squared norm before performing sqrt.
-
     Parameters
     ----------
     x : :obj:`~torch.Tensor`
@@ -225,9 +221,9 @@ def rms(x: Tensor, L: DegreeRange, additional_dims: int | Tuple[int,...] = -1,
     ret = ret.mean(mean_dims, keepdim=keepdim)
     if not squared:
         if return_norm:
-            return (ret+1e-20).sqrt(), (n+1e-20).sqrt() if degree_wise else (n.sum(dim=-2, keepdim=keepdim)+1e-20).sqrt()
+            return (ret.relu()).sqrt(), (n.relu()).sqrt() if degree_wise else (n.sum(dim=-2, keepdim=keepdim).relu()).sqrt()
         else:
-            return (ret+1e-20).sqrt()
+            return (ret.relu()).sqrt()
     else:
         if return_norm:
             return ret, n if degree_wise else n.sum(dim=-2, keepdim=keepdim)
@@ -240,11 +236,6 @@ def norm(x: Tensor, L: DegreeRange, ):
     .. math::
 
         \|\mathbf{x}^{(l)}_c\| = \sqrt{\sum_{m=-l}^l [{\mathbf{x}_m^{(l)}}]_c^2}, l\in L
-
-    Warning
-    -------
-    For gradient issues at zero, we add 1e-20 to the squared before performing sqrt.
-        
 
     Parameters
     ----------
@@ -270,7 +261,7 @@ def norm(x: Tensor, L: DegreeRange, ):
     torch.Size([32, 4, 64])  # (N, num_degrees, C)
     """
 
-    return (reduce_order_to_degree(x**2, L, dim=-2)+1e-20).sqrt()
+    return (reduce_order_to_degree(x**2, L, dim=-2).relu()).sqrt()
 
 def norm2(x: Tensor, L: DegreeRange):
     r"""Compute the square of degree & channel-wise norm of a spherical feature as
