@@ -93,7 +93,7 @@ def blocked_CG(L: DegreeRange, L1: DegreeRange, L2:DegreeRange, condition:Option
 
     Returns
     -------
-    Dict[Tuple[int, int, int], Tensor]
+    :obj:`Dict[Tuple[int, int, int], Tensor]`
         A dictionary where each key is a tuple :math:`(l, l_1, l_2)`, and each value
         is a tensor of Clebsch-Gordan coefficients for that combination.
     """
@@ -124,6 +124,10 @@ def coo_CG(L:DegreeRange, L1:DegreeRange, L2:DegreeRange,
     :math:`l_1` and :math:`l_2` to a total angular momentum :math:`l`, and returns them in a sparse format.
     The results are sorted in the order of (l, M, l1, l2, M1, M2).
 
+    Note
+    ----
+    The output is strictly sorted in the order of (l, M, l1, l2, M1, M2) lexigraphically.
+
     Parameters
     ----------
     L : :obj:`~equitorch.typing.DegreeRange`
@@ -140,25 +144,20 @@ def coo_CG(L:DegreeRange, L1:DegreeRange, L2:DegreeRange,
     device : torch.device, optional
         The desired device of the output tensors. Default is :obj:`None` (uses current device).
 
+
     Returns
     -------
-    Tuple[Tensor, Tensor, Tensor, Tensor]
-        A tuple containing:
-
-        - Cs : :obj:`~torch.Tensor` of shape (N,)
-            Non-zero CG coefficient values.
-        - Ms : :obj:`~torch.Tensor` of shape (3, N)
-            Indices (M, M1, M2) of non-zero CG values.
-        - ls_cg : :obj:`~torch.Tensor` of shape (3, N)
-            Corresponding degrees (l, l1, l2) for each non-zero CG value.
-        - l_ind : :obj:`~torch.Tensor` of shape (N,)
-            Indices of (l, l1, l2) combinations.
+    Cs : :obj:`~torch.Tensor` of shape (N,)
+        Non-zero CG coefficient values.
+    Ms : :obj:`~torch.Tensor` of shape (3, N)
+        Indices (M, M1, M2) of non-zero CG values.
+    ls_cg : :obj:`~torch.Tensor` of shape (3, N)
+        Corresponding degrees (l, l1, l2) for each non-zero CG value.
+    l_ind : :obj:`~torch.Tensor` of shape (N,)
+        Indices of (l, l1, l2) combinations.
 
         Where N is the number of non-zero CG coefficients.
 
-    Notes
-    -----
-    - The output is strictly sorted in the order of (l, M, l1, l2, M1, M2) lexigraphically.
     """
     L = check_degree_range(L)
     L1 = check_degree_range(L1)

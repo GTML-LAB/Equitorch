@@ -306,8 +306,8 @@ class SO3Linear(nn.Module):
         :obj:`~torch.Tensor`
             The output tensor of shape :math:`(N, \text{num_orders_out}, C_{\text{out}})`.
 
-        Notes
-        -----
+        Note
+        ----
         If :obj:`external_weights` is :obj:`True`, the :obj:`weight` parameter must be provided. 
         If :obj:`external_weights` is :obj:`False`, the :obj:`weight` will still be used if provided.
         """
@@ -362,14 +362,11 @@ class SO2Linear(nn.Module):
     Convolutions to SO(2) for Efficient Equivariant GNNs 
     <https://arxiv.org/abs/2302.03655>`_.
 
-
-
-
     .. math::
         \begin{aligned}
-        \mathbf{x}_{m}^{(l_o)}&=\sum_{l_i\in L_{in}}\mathbf{W}_{m}^{(l_o,l_i)}\mathbf{x}_{-m}^{(l_i)}-\mathbf{W}_{m}^{(l_o,l_i)}\mathbf{x}_{-m}^{(l_i)}, & m < 0,\\
-        \mathbf{x}_{0}^{(l_o)}&=\sum_{l_i\in L_{in}}\mathbf{W}_{0}^{(l_o,l_i)}\mathbf{x}_{0}^{(l_i)}, &\\
-        \mathbf{x}_{m}^{(l_o)}&=\sum_{l_i\in L_{in}}\mathbf{W}_{m}^{(l_o,l_i)}\mathbf{x}_{m}^{(l_i)}-\mathbf{W}_{-m}^{(l_o,l_i)}\mathbf{x}_{-m}^{(l_i)}, & m > 0,\\
+        \mathbf{x'}_{m}^{(l_o)}&=\sum_{l_i\in L_{in}}\mathbf{W}_{m}^{(l_o,l_i)}\mathbf{x}_{-m}^{(l_i)}+\mathbf{W}_{-m}^{(l_o,l_i)}\mathbf{x}_{m}^{(l_i)}, & m < 0,\\
+        \mathbf{x'}_{0}^{(l_o)}&=\sum_{l_i\in L_{in}}\mathbf{W}_{0}^{(l_o,l_i)}\mathbf{x}_{0}^{(l_i)}, &\\
+        \mathbf{x'}_{m}^{(l_o)}&=\sum_{l_i\in L_{in}}\mathbf{W}_{m}^{(l_o,l_i)}\mathbf{x}_{m}^{(l_i)}-\mathbf{W}_{-m}^{(l_o,l_i)}\mathbf{x}_{-m}^{(l_i)}, & m > 0,\\
         \end{aligned}
 
     where :math:`\mathbf{W}_{m}^{(l_o,l_i)}\mathbf{x}_{m'}^{(l_i)}` means 
@@ -505,8 +502,8 @@ class SO2Linear(nn.Module):
             The output tensor of shape :math:`(N, \text{num_orders_out}, C_{\text{out}})`.
             The returned feature should then be transformed by :math:`\mathbf{D}_{\text{out}}^\top`.
 
-        Notes
-        -----
+        Note
+        ----
         If :obj:`external_weights` is :obj:`True`, the :obj:`weight` parameter must be provided. 
         If :obj:`external_weights` is :obj:`False`, the :obj:`weight` will still be used if provided.
         """

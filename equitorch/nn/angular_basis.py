@@ -74,8 +74,8 @@ class FourierBasisExpansion(nn.Module):
         Whether to include a constant term (frequency 0) in the expansion. 
         Default is :obj:`False`.
 
-    Notes
-    -----
+    Note
+    ----
     The output tensor is organized in the following frequency order:
     
     .. math::

@@ -73,9 +73,10 @@ def xyz_to_angles(xyz, need_normalize, dim=-1):
 
     Returns
     -------
-    Tuple[Tensor, Tensor]
-        - theta : Polar angle, tensor of shape :math:`(...)`
-        - phi : Azimuthal angle, tensor of shape :math:`(...)`
+    theta : :obj:`Tensor`
+        Polar angle, tensor of shape :math:`(...)`
+    phi : :obj:`Tensor`
+        Azimuthal angle, tensor of shape :math:`(...)`
     """
     if need_normalize:
         xyz = torch.nn.functional.normalize(xyz, p=2, dim=dim)  # forward 0's instead of nan for zero-radius
@@ -276,8 +277,8 @@ def spherical_harmonics(X: Tensor,
     :obj:`~torch.Tensor`
         Tensor of spherical harmonics.
 
-    Notes
-    -----
+    Note
+    ----
     The shape of the output tensor depends on the input shape and the degree range L.
     """
     L = check_degree_range(L)

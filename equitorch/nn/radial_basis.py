@@ -28,8 +28,8 @@ class GaussianBasisExpansion(nn.Module):
     trainable : bool, optional
         Whether the mu and gamma parameters should be trainable. Default is :obj:`False`.
 
-    Notes
-    -----
+    Note
+    ----
     If :obj:`num_basis` is provided, :math:`\mu_k` are generated evenly in :math:`[\text{start},\text{end}]`.
     If :obj:`gamma` is a float, it is expanded to match the shape of :math:`\mu`.
     If :obj:`trainable` is :obj:`True`, :obj:`mu` and :obj:`gamma` become :obj:`nn.Parameter` objects.
@@ -87,8 +87,8 @@ class BesselBasisExpansion(torch.nn.Module):
     eps : float, optional
         A small value for stability near zero. Default is 1e-6.
 
-    Notes
-    -----
+    Note
+    ----
         If :obj:`trainable` is :obj:`True`, the frequency parameters become :obj:`nn.Parameter` objects.
 
     """

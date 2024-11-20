@@ -269,8 +269,8 @@ def shifted_softplus(x: Tensor, alpha: float = 0.5, threshold: float = 20.):
     :obj:`~torch.Tensor`
         Output tensor after applying the shifted softplus activation.
 
-    Notes
-    -----
+    Note
+    ----
     - This function provides a smooth approximation to the ReLU function.
     - The threshold is used to prevent numerical overflow for large input values.
     - When x is large (>= threshold), the function approximates to a linear function.
