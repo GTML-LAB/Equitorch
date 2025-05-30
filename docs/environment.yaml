@@ -28,7 +28,6 @@ dependencies:
   - zlib=1.2.13=h5eee18b_1
   - pip:
       - numpy
-      - psutil
       - -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
       - pyg-lib
       - pyparsing
