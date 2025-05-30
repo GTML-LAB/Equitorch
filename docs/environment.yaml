@@ -36,11 +36,11 @@ dependencies:
       - scipy==1.15.3
       - sympy==1.13.3
       - torch==2.4.0+cu124
-      - torch-cluster==pt24cu124
+      - torch-cluster
       - torch-geometric==2.4.0
-      - torch-scatter==pt24cu124
-      - torch-sparse==pt24cu124
-      - torch-spline-conv==pt24cu124
+      - torch-scatter
+      - torch-sparse
+      - torch-spline-conv
       - triton==3.2.0
       - Sphinx                        
       - sphinx-autobuild              
