@@ -30,18 +30,18 @@ dependencies:
       - -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
       - pyg-lib
       - sympy
-      - --index-url https://download.pytorch.org/whl/cu124
-      - torch==2.4.0
-      - -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
-      - torch-cluster
-      - -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
+      - --index-url https://download.pytorch.org/whl/cu126
+      - torch
+      - -f https://data.pyg.org/whl/torch-2.7.0+cu126.html
+      - torch_cluster
+      - -f https://data.pyg.org/whl/torch-2.7.0+cu126.html
       - torch_geometric
-      - -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
-      - torch-scatter
-      - -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
-      - torch-sparse
-      - -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
-      - torch-spline-conv 
+      - -f https://data.pyg.org/whl/torch-2.7.0+cu126.html
+      - torch_scatter
+      - -f https://data.pyg.org/whl/torch-2.7.0+cu126.html
+      - torch_sparse
+      - -f https://data.pyg.org/whl/torch-2.7.0+cu126.html
+      - torch_spline_conv 
       - triton==3.2.0
       - Sphinx                        
       - sphinx-autobuild              
