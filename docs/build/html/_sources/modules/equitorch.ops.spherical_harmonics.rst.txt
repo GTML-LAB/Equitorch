@@ -1,0 +1,7 @@
+equitorch.ops.spherical\_harmonics module
+=========================================
+
+.. automodule:: equitorch.ops.spherical_harmonics
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,10 @@
+equitorch.irreps package
+========================
+
+Module contents
+---------------
+
+.. automodule:: equitorch.irreps
+   :members:
+   :show-inheritance:
+   :undoc-members:

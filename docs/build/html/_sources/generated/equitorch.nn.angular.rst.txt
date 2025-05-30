@@ -1,0 +1,12 @@
+equitorch.nn.angular
+====================
+
+.. automodule:: equitorch.nn.angular
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SinCos
+   

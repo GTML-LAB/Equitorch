@@ -1,0 +1,13 @@
+equitorch.nn.others
+===================
+
+.. automodule:: equitorch.nn.others
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Separable
+      SplitIrreps
+   

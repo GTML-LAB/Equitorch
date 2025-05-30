@@ -1,0 +1,55 @@
+﻿equitorch.nn
+============
+
+.. automodule:: equitorch.nn
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      initialize_tensor_product
+      initialize_so3_so2_linear
+      initialize_linear
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SO3Linear
+      IrrepWiseLinear
+      IrrepsLinear
+      SO2Linear
+      SplitIrreps
+      Separable
+      SphericalHarmonics
+      XYZToSpherical
+      SphericalToXYZ
+      XYZToSinCos
+      BatchRMSNorm
+      LayerRMSNorm
+      TensorProduct
+      TensorDot
+      SparseWignerRotation
+      DenseWignerRotation
+      WignerD
+      AlignToZWignerD
+      PolynomialCutoff
+      CosineCutoff
+      MollifierCutoff
+      Gate
+      SinCos
+      BesselBasis
+      SquaredNorm
+      Norm
+      MeanSquaredNorm
+      Dropout
+      AnglesToMatrix
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   functional

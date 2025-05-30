@@ -1,0 +1,23 @@
+equitorch.structs
+=================
+
+.. automodule:: equitorch.structs
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      add_operation_methods
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      IrrepsInfo
+      IrrepsLinearInfo
+      SparseProductInfo
+      SparseScaleInfo
+      TensorProductInfo
+      WignerRotationInfo
+   

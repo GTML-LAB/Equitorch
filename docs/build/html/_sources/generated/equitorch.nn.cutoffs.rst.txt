@@ -1,0 +1,14 @@
+equitorch.nn.cutoffs
+====================
+
+.. automodule:: equitorch.nn.cutoffs
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CosineCutoff
+      MollifierCutoff
+      PolynomialCutoff
+   

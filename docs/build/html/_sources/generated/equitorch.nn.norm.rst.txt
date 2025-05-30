@@ -1,0 +1,14 @@
+equitorch.nn.norm
+=================
+
+.. automodule:: equitorch.nn.norm
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      MeanSquaredNorm
+      Norm
+      SquaredNorm
+   

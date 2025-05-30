@@ -1,0 +1,15 @@
+equitorch.nn.sphericals
+=======================
+
+.. automodule:: equitorch.nn.sphericals
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SphericalHarmonics
+      SphericalToXYZ
+      XYZToSinCos
+      XYZToSpherical
+   

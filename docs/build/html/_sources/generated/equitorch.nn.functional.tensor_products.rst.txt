@@ -1,0 +1,22 @@
+equitorch.nn.functional.tensor\_products
+========================================
+
+.. automodule:: equitorch.nn.functional.tensor_products
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      tensor_product_uuu
+      tensor_product_uvw
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      TensorDotUU
+      TensorDotUV
+      TensorProductUUUDummy
+      TensorProductUVWDummy
+   

@@ -1,0 +1,7 @@
+equitorch.nn.functional.sparse\_product module
+==============================================
+
+.. automodule:: equitorch.nn.functional.sparse_product
+   :members:
+   :show-inheritance:
+   :undoc-members:

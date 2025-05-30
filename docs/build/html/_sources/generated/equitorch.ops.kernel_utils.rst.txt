@@ -1,0 +1,6 @@
+equitorch.ops.kernel\_utils
+===========================
+
+.. automodule:: equitorch.ops.kernel_utils
+
+   

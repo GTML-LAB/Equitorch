@@ -1,0 +1,30 @@
+equitorch.nn.functional.sparse\_product
+=======================================
+
+.. automodule:: equitorch.nn.functional.sparse_product
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      sparse_inner
+      sparse_mat_t_vec
+      sparse_mul
+      sparse_outer
+      sparse_scavec
+      sparse_vecmat
+      sparse_vecsca
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SparseInner
+      SparseMatTVec
+      SparseMul
+      SparseOuter
+      SparseScaVec
+      SparseVecMat
+      SparseVecSca
+   

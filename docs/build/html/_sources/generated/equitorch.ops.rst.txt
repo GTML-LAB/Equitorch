@@ -1,0 +1,22 @@
+equitorch.ops
+=============
+
+.. automodule:: equitorch.ops
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   accumulated_indexed_product_segment_op
+   batched_sparse_dense_op
+   indexed_product_op
+   indexed_product_scale_segment_op
+   indexed_product_segment_op
+   indexed_scale_segment_op
+   kernel_dense
+   kernel_utils
+   product_segment_op
+   spherical_harmonics

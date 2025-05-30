@@ -1,0 +1,16 @@
+equitorch.ops.indexed\_product\_scale\_segment\_op
+==================================================
+
+.. automodule:: equitorch.ops.indexed_product_scale_segment_op
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      indexed_inner_scale_segment
+      indexed_mul_scale_segment
+      indexed_outer_scale_segment
+      indexed_vecmat_scale_segment
+      indexed_vecsca_scale_segment
+   

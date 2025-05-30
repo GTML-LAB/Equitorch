@@ -1,0 +1,12 @@
+equitorch.nn.functional.dropout
+===============================
+
+.. automodule:: equitorch.nn.functional.dropout
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      irrep_wise_dropout
+   

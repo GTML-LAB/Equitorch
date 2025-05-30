@@ -1,0 +1,7 @@
+equitorch.ops.kernel\_utils module
+==================================
+
+.. automodule:: equitorch.ops.kernel_utils
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+equitorch.nn.functional.sphericals module
+=========================================
+
+.. automodule:: equitorch.nn.functional.sphericals
+   :members:
+   :show-inheritance:
+   :undoc-members:

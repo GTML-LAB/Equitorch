@@ -1,0 +1,12 @@
+equitorch.nn.activations
+========================
+
+.. automodule:: equitorch.nn.activations
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Gate
+   

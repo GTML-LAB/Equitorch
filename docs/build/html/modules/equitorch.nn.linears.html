@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>equitorch.nn.linears module &mdash; equitorch  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="equitorch.nn.norm module" href="equitorch.nn.norm.html" />
+    <link rel="prev" title="equitorch.nn.init module" href="equitorch.nn.init.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            equitorch
+              <img src="../_static/logo_.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">equitorch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="equitorch.html">equitorch package</a></li>
+          <li class="breadcrumb-item"><a href="equitorch.nn.html">equitorch.nn package</a></li>
+      <li class="breadcrumb-item active">equitorch.nn.linears module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/equitorch.nn.linears.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-equitorch.nn.linears">
+<span id="equitorch-nn-linears-module"></span><h1>equitorch.nn.linears module<a class="headerlink" href="#module-equitorch.nn.linears" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO3Linear">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.nn.linears.</span></span><span class="sig-name descname"><span class="pre">SO3Linear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps_in1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps_in2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels_in</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">internal_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.nn.linears.SO3Linear" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>SO(3) equivariant linear layer using tensor products.</p>
+<p>Equivalent to a TensorProduct where  <code class="docutils literal notranslate"><span class="pre">input2</span></code> does not have a channel dimension.</p>
+<p>Supports two main modes controlled by <code class="docutils literal notranslate"><span class="pre">feature_mode</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'uv'</span></code>: Fully connected in channel dimension.</p>
+<ul>
+<li><p>Input1 shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_in1.dim,</span> <span class="pre">channels_in)</span></code></p></li>
+<li><p>Input2 shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_in2.dim)</span></code></p></li>
+<li><p>Weight shape: <code class="docutils literal notranslate"><span class="pre">(num_paths,</span> <span class="pre">channels_in,</span> <span class="pre">channels_out)</span></code></p></li>
+<li><p>Output shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_out.dim,</span> <span class="pre">channels_out)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'uu'</span></code>: Depthwise/elementwise in channel dimension.</p>
+<ul>
+<li><p>Input1 shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_in1.dim,</span> <span class="pre">channels)</span></code></p></li>
+<li><p>Input2 shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_in2.dim)</span></code></p></li>
+<li><p>Weight shape: <code class="docutils literal notranslate"><span class="pre">(num_paths,</span> <span class="pre">channels)</span></code></p></li>
+<li><p>Output shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_out.dim,</span> <span class="pre">channels)</span></code></p></li>
+</ul>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>irreps_in1</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a>) – Irreducible representations of the main input tensor (<code class="docutils literal notranslate"><span class="pre">input1</span></code>).</p></li>
+<li><p><strong>irreps_in2</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a>) – Irreducible representations of the second input tensor (<code class="docutils literal notranslate"><span class="pre">input2</span></code>),
+often representing weights like spherical harmonics.</p></li>
+<li><p><strong>irreps_out</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a>) – Irreducible representations of the output tensor.</p></li>
+<li><p><strong>channels_in</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of channels for the main input (<code class="docutils literal notranslate"><span class="pre">input1</span></code>).
+Required if <code class="docutils literal notranslate"><span class="pre">internal_weights=True</span></code>.</p></li>
+<li><p><strong>channels_out</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of channels for the output.
+Required if <code class="docutils literal notranslate"><span class="pre">internal_weights=True</span></code>.</p></li>
+<li><p><strong>internal_weights</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the module manages its own weight parameter.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, weights must be provided during the forward pass. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>feature_mode</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Controls the type of linear operation: <code class="docutils literal notranslate"><span class="pre">{'uu',</span> <span class="pre">'uv'}</span></code>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">'uu'</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'uu'</span></code>: Depthwise/elementwise linear. Assumes <code class="docutils literal notranslate"><span class="pre">channels_in</span> <span class="pre">==</span> <span class="pre">channels_out</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'uv'</span></code>: Fully connected linear.</p></li>
+</ul>
+</p></li>
+<li><p><strong>path_norm</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to apply path normalization to the weights.
+Normalizes by the square root of the number of paths to each output irrep. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>channel_norm</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to apply channel normalization (specific to <code class="docutils literal notranslate"><span class="pre">'uv'</span></code> mode).
+Divides weights by (sqrt{text{channels_in}}). Note: This interacts with <code class="docutils literal notranslate"><span class="pre">path_norm</span></code>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>path</strong> (<em>list</em><em>, </em><em>optional</em>) – Manually specify the coupling paths.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, all allowed paths are used. Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO3Linear.weight">
+<span class="sig-name descname"><span class="pre">weight</span></span><a class="headerlink" href="#equitorch.nn.linears.SO3Linear.weight" title="Link to this definition"></a></dt>
+<dd><p>The learnable weights of the module if <code class="docutils literal notranslate"><span class="pre">internal_weights=True</span></code>.
+Shape depends on <code class="docutils literal notranslate"><span class="pre">feature_mode</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.nn.Parameter or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO3Linear.tp_info_forward">
+<span class="sig-name descname"><span class="pre">tp_info_forward</span></span><a class="headerlink" href="#equitorch.nn.linears.SO3Linear.tp_info_forward" title="Link to this definition"></a></dt>
+<dd><p>Constant information for the forward pass computation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="equitorch.structs.html#equitorch.structs.TensorProductInfo" title="equitorch.structs.TensorProductInfo">TensorProductInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO3Linear.tp_info_backward1">
+<span class="sig-name descname"><span class="pre">tp_info_backward1</span></span><a class="headerlink" href="#equitorch.nn.linears.SO3Linear.tp_info_backward1" title="Link to this definition"></a></dt>
+<dd><p>Constant information for the backward pass w.r.t. <code class="docutils literal notranslate"><span class="pre">input1</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="equitorch.structs.html#equitorch.structs.TensorProductInfo" title="equitorch.structs.TensorProductInfo">TensorProductInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO3Linear.tp_info_backward2">
+<span class="sig-name descname"><span class="pre">tp_info_backward2</span></span><a class="headerlink" href="#equitorch.nn.linears.SO3Linear.tp_info_backward2" title="Link to this definition"></a></dt>
+<dd><p>Constant information for the backward pass w.r.t. <code class="docutils literal notranslate"><span class="pre">input2</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="equitorch.structs.html#equitorch.structs.TensorProductInfo" title="equitorch.structs.TensorProductInfo">TensorProductInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO3Linear.num_paths">
+<span class="sig-name descname"><span class="pre">num_paths</span></span><a class="headerlink" href="#equitorch.nn.linears.SO3Linear.num_paths" title="Link to this definition"></a></dt>
+<dd><p>Number of coupling paths determined by the irreps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO3Linear.weight_numel">
+<span class="sig-name descname"><span class="pre">weight_numel</span></span><a class="headerlink" href="#equitorch.nn.linears.SO3Linear.weight_numel" title="Link to this definition"></a></dt>
+<dd><p>Total number of elements in the weight tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">tp_info_forward</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="equitorch.structs.html#equitorch.structs.TensorProductInfo" title="equitorch.structs.TensorProductInfo"><span class="pre">TensorProductInfo</span></a></em><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">tp_info_backward1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="equitorch.structs.html#equitorch.structs.TensorProductInfo" title="equitorch.structs.TensorProductInfo"><span class="pre">TensorProductInfo</span></a></em><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">tp_info_backward2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="equitorch.structs.html#equitorch.structs.TensorProductInfo" title="equitorch.structs.TensorProductInfo"><span class="pre">TensorProductInfo</span></a></em><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO3Linear.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#equitorch.nn.linears.SO3Linear.training" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepWiseLinear">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.nn.linears.</span></span><span class="sig-name descname"><span class="pre">IrrepWiseLinear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">internal_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.nn.linears.IrrepWiseLinear" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Irrep-wise linear layer (channel mixing).</p>
+<p>Applies a separate linear transformation to the channels associated with each irrep type.
+This operation does not change the spherical tensor structure (the irreps).</p>
+<ul class="simple">
+<li><p>Input shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps.dim,</span> <span class="pre">channels_in)</span></code></p></li>
+<li><p>Weight shape: <code class="docutils literal notranslate"><span class="pre">(num_paths,</span> <span class="pre">channels_in,</span> <span class="pre">channels_out)</span></code> where <code class="docutils literal notranslate"><span class="pre">num_paths</span></code> is the number of unique irreps in <code class="docutils literal notranslate"><span class="pre">irreps</span></code>.</p></li>
+<li><p>Output shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps.dim,</span> <span class="pre">channels_out)</span></code></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>irreps</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a><em> or </em><em>str</em>) – Irreducible representations of the input tensor.</p></li>
+<li><p><strong>channels_in</strong> (<em>int</em>) – Number of input channels.</p></li>
+<li><p><strong>channels_out</strong> (<em>int</em>) – Number of output channels.</p></li>
+<li><p><strong>internal_weights</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the module manages its own weight parameter.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, weights must be provided during the forward pass. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>channel_norm</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, divides the output by (sqrt{text{channels_in}}).
+Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepWiseLinear.weight">
+<span class="sig-name descname"><span class="pre">weight</span></span><a class="headerlink" href="#equitorch.nn.linears.IrrepWiseLinear.weight" title="Link to this definition"></a></dt>
+<dd><p>The learnable weights of the module if <code class="docutils literal notranslate"><span class="pre">internal_weights=True</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.nn.Parameter or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepWiseLinear.irreps_info">
+<span class="sig-name descname"><span class="pre">irreps_info</span></span><a class="headerlink" href="#equitorch.nn.linears.IrrepWiseLinear.irreps_info" title="Link to this definition"></a></dt>
+<dd><p>Constant information about the input irreps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="equitorch.structs.html#equitorch.structs.IrrepsInfo" title="equitorch.structs.IrrepsInfo">IrrepsInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepWiseLinear.num_paths">
+<span class="sig-name descname"><span class="pre">num_paths</span></span><a class="headerlink" href="#equitorch.nn.linears.IrrepWiseLinear.num_paths" title="Link to this definition"></a></dt>
+<dd><p>Number of unique irreps in the input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepWiseLinear.weight_numel">
+<span class="sig-name descname"><span class="pre">weight_numel</span></span><a class="headerlink" href="#equitorch.nn.linears.IrrepWiseLinear.weight_numel" title="Link to this definition"></a></dt>
+<dd><p>Total number of elements in the weight tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">irreps_info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="equitorch.structs.html#equitorch.structs.IrrepsInfo" title="equitorch.structs.IrrepsInfo"><span class="pre">IrrepsInfo</span></a></em><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepWiseLinear.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#equitorch.nn.linears.IrrepWiseLinear.training" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepsLinear">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.nn.linears.</span></span><span class="sig-name descname"><span class="pre">IrrepsLinear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">internal_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.nn.linears.IrrepsLinear" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Equivariant linear layer that preserves the spherical tensor structure but mixes channels.</p>
+<p>This layer applies a linear transformation across channels while respecting the
+equivariance constraints imposed by the input and output irreps. It only allows
+paths where the input and output irreps are the same ((l_{in} = l_{out}) and ((p_{in} = p_{out}) or (p_{out}=0))).
+This is often used for channel mixing in equivariant networks.</p>
+<ul class="simple">
+<li><p>Input shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_in.dim,</span> <span class="pre">channels_in)</span></code></p></li>
+<li><p>Weight shape: <code class="docutils literal notranslate"><span class="pre">(num_paths,</span> <span class="pre">channels_in,</span> <span class="pre">channels_out)</span></code> where <code class="docutils literal notranslate"><span class="pre">num_paths</span></code> is the number of allowed paths.</p></li>
+<li><p>Output shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_out.dim,</span> <span class="pre">channels_out)</span></code></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>irreps_in</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a>) – Irreducible representations of the input tensor.</p></li>
+<li><p><strong>irreps_out</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a>) – Irreducible representations of the output tensor.</p></li>
+<li><p><strong>channels_in</strong> (<em>int</em>) – Number of input channels.</p></li>
+<li><p><strong>channels_out</strong> (<em>int</em>) – Number of output channels.</p></li>
+<li><p><strong>internal_weights</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the module manages its own weight parameter.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, weights must be provided during the forward pass. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>path_norm</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to apply path normalization to the weights.
+Normalizes by the square root of the number of paths to each output irrep. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>channel_norm</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to apply channel normalization.
+Divides weights by (sqrt{text{channels_in}}).
+Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>path</strong> (<em>list</em><em>, </em><em>optional</em>) – Manually specify the coupling paths.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, all allowed paths are used. Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepsLinear.weight">
+<span class="sig-name descname"><span class="pre">weight</span></span><a class="headerlink" href="#equitorch.nn.linears.IrrepsLinear.weight" title="Link to this definition"></a></dt>
+<dd><p>The learnable weights of the module if <code class="docutils literal notranslate"><span class="pre">internal_weights=True</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.nn.Parameter or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepsLinear.forward_info">
+<span class="sig-name descname"><span class="pre">forward_info</span></span><a class="headerlink" href="#equitorch.nn.linears.IrrepsLinear.forward_info" title="Link to this definition"></a></dt>
+<dd><p>Constant information for the forward pass computation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="equitorch.structs.html#equitorch.structs.IrrepsLinearInfo" title="equitorch.structs.IrrepsLinearInfo">IrrepsLinearInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepsLinear.backward_info">
+<span class="sig-name descname"><span class="pre">backward_info</span></span><a class="headerlink" href="#equitorch.nn.linears.IrrepsLinear.backward_info" title="Link to this definition"></a></dt>
+<dd><p>Constant information for the backward pass computation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="equitorch.structs.html#equitorch.structs.IrrepsLinearInfo" title="equitorch.structs.IrrepsLinearInfo">IrrepsLinearInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepsLinear.num_paths">
+<span class="sig-name descname"><span class="pre">num_paths</span></span><a class="headerlink" href="#equitorch.nn.linears.IrrepsLinear.num_paths" title="Link to this definition"></a></dt>
+<dd><p>Number of allowed coupling paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepsLinear.weight_numel">
+<span class="sig-name descname"><span class="pre">weight_numel</span></span><a class="headerlink" href="#equitorch.nn.linears.IrrepsLinear.weight_numel" title="Link to this definition"></a></dt>
+<dd><p>Total number of elements in the weight tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">forward_info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="equitorch.structs.html#equitorch.structs.IrrepsLinearInfo" title="equitorch.structs.IrrepsLinearInfo"><span class="pre">IrrepsLinearInfo</span></a></em><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">backward_info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="equitorch.structs.html#equitorch.structs.IrrepsLinearInfo" title="equitorch.structs.IrrepsLinearInfo"><span class="pre">IrrepsLinearInfo</span></a></em><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.IrrepsLinear.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#equitorch.nn.linears.IrrepsLinear.training" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO2Linear">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.nn.linears.</span></span><span class="sig-name descname"><span class="pre">SO2Linear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels_in</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">internal_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.nn.linears.SO2Linear" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>SO(2) equivariant linear layer using tensor products.</p>
+<p>This layer applies an SO(2) equivariant linear transformation, as proposed in <a class="reference external" href="https://arxiv.org/abs/2302.03655">Reducing SO(3) Convolutions to SO(2) for Efficient Equivariant GNNs</a>.
+It supports two main modes controlled by <code class="docutils literal notranslate"><span class="pre">feature_mode</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'uv'</span></code>: Fully connected linear layer.</p>
+<ul>
+<li><p>Input shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_in.dim,</span> <span class="pre">channels_in)</span></code></p></li>
+<li><p>Weight shape: <code class="docutils literal notranslate"><span class="pre">(num_weights,</span> <span class="pre">channels_in,</span> <span class="pre">channels_out)</span></code></p></li>
+<li><p>Output shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_out.dim,</span> <span class="pre">channels_out)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'uu'</span></code>: Depthwise/elementwise linear layer.</p>
+<ul>
+<li><p>Input shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_in.dim,</span> <span class="pre">channels)</span></code></p></li>
+<li><p>Weight shape: <code class="docutils literal notranslate"><span class="pre">(num_weights,</span> <span class="pre">channels_out)</span></code></p></li>
+<li><p>Output shape: <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps_out.dim,</span> <span class="pre">channels_out)</span></code></p></li>
+</ul>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>irreps_in</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a><em> or </em><em>str</em>) – Irreducible representations of the input tensor.</p></li>
+<li><p><strong>irreps_out</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a><em> or </em><em>str</em>) – Irreducible representations of the output tensor.</p></li>
+<li><p><strong>channels_in</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of channels for the input.
+Required if <code class="docutils literal notranslate"><span class="pre">internal_weights=True</span></code>.</p></li>
+<li><p><strong>channels_out</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of channels for the output.
+Required if <code class="docutils literal notranslate"><span class="pre">internal_weights=True</span></code>.</p></li>
+<li><p><strong>internal_weights</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the module manages its own weight parameter.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, weights must be provided during the forward pass. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>feature_mode</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Controls the type of linear operation: <code class="docutils literal notranslate"><span class="pre">{'uu',</span> <span class="pre">'uv'}</span></code>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">'uu'</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'uu'</span></code>: Depthwise/elementwise linear. Assumes <code class="docutils literal notranslate"><span class="pre">channels_in</span> <span class="pre">==</span> <span class="pre">channels_out</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'uv'</span></code>: Fully connected linear.</p></li>
+</ul>
+</p></li>
+<li><p><strong>path_norm</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to apply path normalization to the weights.
+Normalizes by the square root of the number of paths to each output irrep. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>channel_norm</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to apply channel normalization (specific to <code class="docutils literal notranslate"><span class="pre">'uv'</span></code> mode).
+Divides weights by (sqrt{text{channels_in}}). Note: This interacts with <code class="docutils literal notranslate"><span class="pre">path_norm</span></code>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>path</strong> (<em>list</em><em>, </em><em>optional</em>) – Manually specify the coupling paths.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, all allowed paths are used. Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO2Linear.weight">
+<span class="sig-name descname"><span class="pre">weight</span></span><a class="headerlink" href="#equitorch.nn.linears.SO2Linear.weight" title="Link to this definition"></a></dt>
+<dd><p>The learnable weights of the module if <code class="docutils literal notranslate"><span class="pre">internal_weights=True</span></code>.
+Shape depends on <code class="docutils literal notranslate"><span class="pre">feature_mode</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.nn.Parameter or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO2Linear.info_forward">
+<span class="sig-name descname"><span class="pre">info_forward</span></span><a class="headerlink" href="#equitorch.nn.linears.SO2Linear.info_forward" title="Link to this definition"></a></dt>
+<dd><p>Constant information for the forward pass computation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="equitorch.structs.html#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo">SparseProductInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO2Linear.info_backward1">
+<span class="sig-name descname"><span class="pre">info_backward1</span></span><a class="headerlink" href="#equitorch.nn.linears.SO2Linear.info_backward1" title="Link to this definition"></a></dt>
+<dd><p>Constant information for the first backward pass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="equitorch.structs.html#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo">SparseProductInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO2Linear.info_backward2">
+<span class="sig-name descname"><span class="pre">info_backward2</span></span><a class="headerlink" href="#equitorch.nn.linears.SO2Linear.info_backward2" title="Link to this definition"></a></dt>
+<dd><p>Constant information for the second backward pass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="equitorch.structs.html#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo">SparseProductInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO2Linear.num_paths">
+<span class="sig-name descname"><span class="pre">num_paths</span></span><a class="headerlink" href="#equitorch.nn.linears.SO2Linear.num_paths" title="Link to this definition"></a></dt>
+<dd><p>Number of coupling paths determined by the irreps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.linears.SO2Linear.weight_numel">
+<span class="sig-name descname"><span class="pre">weight_numel</span></span><a class="headerlink" href="#equitorch.nn.linears.SO2Linear.weight_numel" title="Link to this definition"></a></dt>
+<dd><p>Total number of elements in the weight tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="equitorch.nn.init.html" class="btn btn-neutral float-left" title="equitorch.nn.init module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="equitorch.nn.norm.html" class="btn btn-neutral float-right" title="equitorch.nn.norm module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tong Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

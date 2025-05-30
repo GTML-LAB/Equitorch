@@ -1,0 +1,14 @@
+equitorch.nn.init
+=================
+
+.. automodule:: equitorch.nn.init
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      initialize_linear
+      initialize_so3_so2_linear
+      initialize_tensor_product
+   

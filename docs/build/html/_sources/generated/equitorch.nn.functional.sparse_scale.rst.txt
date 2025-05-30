@@ -1,0 +1,6 @@
+equitorch.nn.functional.sparse\_scale
+=====================================
+
+.. currentmodule:: equitorch.nn.functional
+
+.. autofunction:: sparse_scale

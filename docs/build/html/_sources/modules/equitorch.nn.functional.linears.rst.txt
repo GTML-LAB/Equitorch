@@ -1,0 +1,7 @@
+equitorch.nn.functional.linears module
+======================================
+
+.. automodule:: equitorch.nn.functional.linears
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+equitorch.nn.functional.sparse\_scale module
+============================================
+
+.. automodule:: equitorch.nn.functional.sparse_scale
+   :members:
+   :show-inheritance:
+   :undoc-members:

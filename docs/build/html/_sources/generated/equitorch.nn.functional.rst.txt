@@ -1,0 +1,53 @@
+equitorch.nn.functional
+=======================
+
+.. automodule:: equitorch.nn.functional
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      tensor_product_u1u
+      so3_linear_uu
+      tensor_product_1uu
+      tensor_product_uu1
+      tensor_product_u1v
+      so3_linear_uv
+      tensor_product_1vu
+      tensor_product_vu1
+      irrep_wise_linear
+      irreps_linear
+      so2_linear_uu
+      so2_linear_uv
+      spherical_harmonics
+      xyz_to_spherical
+      spherical_to_xyz
+      xyz_to_sincos
+      batch_rms_norm
+      layer_rms_norm
+      sparse_scale
+      tensor_product_uuu
+      tensor_product_uvw
+      tensor_dot_uu
+      tensor_dot_uv
+      sparse_mul
+      sparse_outer
+      sparse_inner
+      sparse_vecmat
+      sparse_vecsca
+      sparse_scavec
+      sparse_mat_t_vec
+      sparse_wigner_rotation
+      dense_wigner_rotation
+      wigner_d_matrix
+      align_to_z_wigner_d
+      gating
+      sincos
+      squared_norm
+      norm
+      channel_mean_squared_norm
+      batch_mean_squared_norm
+      irrep_wise_dropout
+      angles_to_matrix
+   

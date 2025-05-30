@@ -1,0 +1,14 @@
+﻿equitorch.transforms
+====================
+
+.. automodule:: equitorch.transforms
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      RadiusGraph
+      AddSphericalHarmonics
+      AddVectorNorm
+   

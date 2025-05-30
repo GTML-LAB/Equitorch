@@ -1,0 +1,15 @@
+equitorch.nn.linears
+====================
+
+.. automodule:: equitorch.nn.linears
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      IrrepWiseLinear
+      IrrepsLinear
+      SO2Linear
+      SO3Linear
+   

@@ -1,0 +1,12 @@
+equitorch.nn.dropout
+====================
+
+.. automodule:: equitorch.nn.dropout
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Dropout
+   

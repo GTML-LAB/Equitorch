@@ -1,0 +1,7 @@
+equitorch.ops.indexed\_product\_op module
+=========================================
+
+.. automodule:: equitorch.ops.indexed_product_op
+   :members:
+   :show-inheritance:
+   :undoc-members:

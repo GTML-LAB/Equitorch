@@ -1,0 +1,18 @@
+﻿equitorch
+=========
+
+.. automodule:: equitorch
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   constants
+   irreps
+   nn
+   structs
+   transforms
+   utils

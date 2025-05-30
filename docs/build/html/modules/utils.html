@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>equitorch.utils &mdash; equitorch  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="equitorch.irreps" href="../generated/equitorch.irreps.html" />
+    <link rel="prev" title="equitorch.transforms" href="transforms.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            equitorch
+              <img src="../_static/logo_.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="constants.html">equitorch.constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="irreps.html">equitorch.irreps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nn.html">equitorch.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structs.html">equitorch.structs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transforms.html">equitorch.transforms</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">equitorch.utils</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.rand_spherical_xyz"><code class="docutils literal notranslate"><span class="pre">rand_spherical_xyz()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.rand_spherical_angles"><code class="docutils literal notranslate"><span class="pre">rand_spherical_angles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.rand_rotation_angles"><code class="docutils literal notranslate"><span class="pre">rand_rotation_angles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.rand_rotation_matrices"><code class="docutils literal notranslate"><span class="pre">rand_rotation_matrices()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.expand_left"><code class="docutils literal notranslate"><span class="pre">expand_left()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.extract_batch_segments"><code class="docutils literal notranslate"><span class="pre">extract_batch_segments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.sort_by_column_key"><code class="docutils literal notranslate"><span class="pre">sort_by_column_key()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.extract_scatter_indices"><code class="docutils literal notranslate"><span class="pre">extract_scatter_indices()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.sparse_scale_info"><code class="docutils literal notranslate"><span class="pre">sparse_scale_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.sparse_scale_infos"><code class="docutils literal notranslate"><span class="pre">sparse_scale_infos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.sparse_product_info"><code class="docutils literal notranslate"><span class="pre">sparse_product_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.sparse_product_infos"><code class="docutils literal notranslate"><span class="pre">sparse_product_infos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.generate_fully_connected_tp_paths"><code class="docutils literal notranslate"><span class="pre">generate_fully_connected_tp_paths()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.tp_info"><code class="docutils literal notranslate"><span class="pre">tp_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.tp_infos"><code class="docutils literal notranslate"><span class="pre">tp_infos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.generate_fully_connected_irreps_linear_paths"><code class="docutils literal notranslate"><span class="pre">generate_fully_connected_irreps_linear_paths()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.irreps_linear_infos"><code class="docutils literal notranslate"><span class="pre">irreps_linear_infos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.irreps_info"><code class="docutils literal notranslate"><span class="pre">irreps_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.z_rotation_infos"><code class="docutils literal notranslate"><span class="pre">z_rotation_infos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.j_matrix_info"><code class="docutils literal notranslate"><span class="pre">j_matrix_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.wigner_d_info"><code class="docutils literal notranslate"><span class="pre">wigner_d_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.irreps_blocks_infos"><code class="docutils literal notranslate"><span class="pre">irreps_blocks_infos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.so2_linear_info"><code class="docutils literal notranslate"><span class="pre">so2_linear_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.utils.so2_linear_infos"><code class="docutils literal notranslate"><span class="pre">so2_linear_infos()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.irreps.html">equitorch.irreps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.nn.html">equitorch.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.transforms.html">equitorch.transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.constants.html">equitorch.constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.utils.html">equitorch.utils</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">equitorch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+      <li class="breadcrumb-item active">equitorch.utils</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-equitorch.utils">
+<span id="equitorch-utils"></span><h1>equitorch.utils<a class="headerlink" href="#module-equitorch.utils" title="Link to this heading"></a></h1>
+<p>Utility functions.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.rand_spherical_xyz">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">rand_spherical_xyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#equitorch.utils.rand_spherical_xyz" title="Link to this definition"></a></dt>
+<dd><p>Generate random points uniformly distributed on a unit sphere.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> – Tuple defining the batch dimensions (e.g., (10,) or (5,5))</p></li>
+<li><p><strong>device</strong> – Torch device for the output tensor</p></li>
+<li><p><strong>dtype</strong> – Torch dtype for the output tensor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tensor of shape <code class="docutils literal notranslate"><span class="pre">(*shape,</span> <span class="pre">3)</span></code> where each vector has unit norm</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.rand_spherical_angles">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">rand_spherical_angles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#equitorch.utils.rand_spherical_angles" title="Link to this definition"></a></dt>
+<dd><p>Generate random spherical angles with uniform distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> – Tuple defining the batch dimensions</p></li>
+<li><p><strong>device</strong> – Torch device for the output tensors</p></li>
+<li><p><strong>dtype</strong> – Torch dtype for the output tensors</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>theta is in [0, π) (polar angle from +z axis)</p></li>
+<li><p>phi is in [0, 2π) (azimuthal angle from +x axis)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple of (theta, phi) where</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.rand_rotation_angles">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">rand_rotation_angles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#equitorch.utils.rand_rotation_angles" title="Link to this definition"></a></dt>
+<dd><p>Generate random Euler angles (ZYZ convention) with uniform distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> – Tuple defining the batch dimensions</p></li>
+<li><p><strong>device</strong> – Torch device for the output tensors</p></li>
+<li><p><strong>dtype</strong> – Torch dtype for the output tensors</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>alpha is in [0, 2π) (first rotation about z-axis)</p></li>
+<li><p>beta is in [0, π) (rotation about y-axis)</p></li>
+<li><p>gamma is in [0, 2π) (second rotation about z-axis)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple of (alpha, beta, gamma) where</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.rand_rotation_matrices">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">rand_rotation_matrices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#equitorch.utils.rand_rotation_matrices" title="Link to this definition"></a></dt>
+<dd><p>Generate random rotation matrices using Rodrigues’ rotation formula.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> – Tuple defining the batch dimensions</p></li>
+<li><p><strong>device</strong> – Torch device for the output tensor</p></li>
+<li><p><strong>dtype</strong> – Torch dtype for the output tensor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tensor of shape (<a href="#id1"><span class="problematic" id="id2">*</span></a>shape, 3, 3) containing valid rotation matrices</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.expand_left">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">expand_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.expand_left" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.extract_batch_segments">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">extract_batch_segments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.extract_batch_segments" title="Link to this definition"></a></dt>
+<dd><p>Process sorted integer key lists to generate batch indices, boundary pointers, and key values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keys</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – A list of sorted integer key lists. All lists must have the same length.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>batch</strong> (<em>List[int]</em>) – A list where each element indicates the batch index it belongs to.</p></li>
+<li><p><strong>seg</strong> (<em>List[int]</em>) – A list of boundary pointers indicating the start and end of each batch.</p></li>
+<li><p><strong>val</strong> (<em>List[List[int]]</em>) – A list of lists containing the key values at the boundary points for each key list.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The input key lists must be sorted in ascending order.</p></li>
+<li><p>If the input is empty, the function returns empty lists for <cite>batch</cite>, <cite>seg</cite>, and <cite>val</cite>.</p></li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extract_batch_seg_native</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+<span class="go">([0, 0, 1, 1], [0, 2, 4], [[1, 2], [1, 2]])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extract_batch_seg_native</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+<span class="go">([0, 0, 0], [0, 3], [[5], [5]])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extract_batch_seg_native</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+<span class="go">([0, 1, 2, 3, 3], [0, 1, 2, 3, 5], [[1, 1, 2, 3], [1, 2, 2, 3]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.sort_by_column_key">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">sort_by_column_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#equitorch.utils.sort_by_column_key" title="Link to this definition"></a></dt>
+<dd><p>Sort the columns of the first 2D list based on the column-wise lexicographical order of the key 2D list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_sort</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>Any</em><em>]</em><em>]</em>) – The first 2D list whose columns are to be sorted.</p></li>
+<li><p><strong>key</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>Any</em><em>]</em><em>]</em>) – The key 2D list used to determine the sorting order of columns.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The first 2D list with columns sorted according to the column-wise lexicographical order of the key.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[List[Any]]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If either <cite>to_sort</cite> or <cite>key</cite> is empty, or if their lengths do not match.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">to_sort</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>           <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">key</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>       <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sort_by_column_key</span><span class="p">(</span><span class="n">to_sort</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="go">[[2, 1, 3],</span>
+<span class="go"> [5, 4, 6]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.extract_scatter_indices">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">extract_scatter_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#equitorch.utils.extract_scatter_indices" title="Link to this definition"></a></dt>
+<dd><p>Process integer key lists to generate scatter indices and sorted unique keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keys</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – A list of integer key lists. All lists must have the same length.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>indices</strong> (<em>List[int]</em>) – A list where each element is the index of the corresponding key tuple in the sorted unique list.</p></li>
+<li><p><strong>scatter_keys</strong> (<em>List[List[int]]</em>) – A list of lists containing the sorted unique key values for each original key list.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>If the input is empty, the function returns empty lists for <cite>indices</cite> and <cite>scatter_keys</cite>.</p></li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extract_scatter_indices</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+<span class="go">([0, 0, 1, 1], [[1, 2], [1, 2]])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extract_scatter_indices</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+<span class="go">([0, 0, 0], [[5], [5]])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extract_scatter_indices</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+<span class="go">([0, 1, 2, 3, 3], [[1, 1, 2, 3], [1, 2, 2, 3]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.sparse_scale_info">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">sparse_scale_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.sparse_scale_info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.sparse_scale_infos">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">sparse_scale_infos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.sparse_scale_infos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.sparse_product_info">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">sparse_product_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.sparse_product_info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.sparse_product_infos">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">sparse_product_infos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in1_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in2_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.sparse_product_infos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.generate_fully_connected_tp_paths">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">generate_fully_connected_tp_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.generate_fully_connected_tp_paths" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.tp_info">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">tp_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.tp_info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.tp_infos">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">tp_infos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.tp_infos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.generate_fully_connected_irreps_linear_paths">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">generate_fully_connected_irreps_linear_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.generate_fully_connected_irreps_linear_paths" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.irreps_linear_infos">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">irreps_linear_infos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.irreps_linear_infos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.irreps_info">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">irreps_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.irreps_info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.z_rotation_infos">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">z_rotation_infos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="structs.html#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="structs.html#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="structs.html#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#equitorch.utils.z_rotation_infos" title="Link to this definition"></a></dt>
+<dd><p>Generates SparseProductInfo for performing z-axis rotation on a tensor
+with the given Irreps structure using the sparse_scavec operation.</p>
+<dl class="simple">
+<dt>Rotation formula:</dt><dd><p>m=0: x’_{nimc} = x_{ni0c}
+m!=0: x’_{nimc} = cos(m*phi) * x_{nimc} + sin(m*phi) * x_{ni(-m)c}</p>
+</dd>
+<dt>Assumes sparse_scavec computes:</dt><dd><p>output[n, M] = sum_t scale[t] * input[n, index2[t]] * cs[n, index1[t]]</p>
+</dd>
+</dl>
+<p>where the sum is segmented by the output index M (implicit via index_out).</p>
+<dl class="simple">
+<dt>Assumed <cite>cs</cite> Tensor Structure (Input 2): shape (N, cs_dim)</dt><dd><p>cs_dim = 1 + 2 * max_l
+cs[:, 0] = 1.0
+cs[:, 2*m - 1] = sin(m*phi) for m = 1..max_l
+cs[:, 2*m]     = cos(m*phi) for m = 1..max_l</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>irreps</strong> – The Irreps object describing the geometric structure of the
+input tensor (Input 1, shape (N, irreps.dim, C)) and
+output tensor (shape (N, irreps.dim, C)).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple (info_fwd, info_bwd1, info_bwd2) containing SparseProductInfo
+objects for the forward pass and gradients w.r.t. x (input1) and
+cs (input2).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.j_matrix_info">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">j_matrix_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="structs.html#equitorch.structs.SparseScaleInfo" title="equitorch.structs.SparseScaleInfo"><span class="pre">SparseScaleInfo</span></a></span></span><a class="headerlink" href="#equitorch.utils.j_matrix_info" title="Link to this definition"></a></dt>
+<dd><p>Generates SparseScaleInfo for multiplying by the J matrix by extracting
+non-zero elements from the dense blocks computed by the user’s j_matrix(l) function.</p>
+<p>Operation: y_M’ = sum_M J_{M’, M} x_M</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>irreps</strong> – The Irreps object describing the geometric structure.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A SparseScaleInfo object for the forward pass.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.wigner_d_info">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">wigner_d_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="structs.html#equitorch.structs.WignerRotationInfo" title="equitorch.structs.WignerRotationInfo"><span class="pre">WignerRotationInfo</span></a></span></span><a class="headerlink" href="#equitorch.utils.wigner_d_info" title="Link to this definition"></a></dt>
+<dd><p>Prepares all necessary info objects for arbitrary Wigner D rotation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.irreps_blocks_infos">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">irreps_blocks_infos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="structs.html#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></span></span><a class="headerlink" href="#equitorch.utils.irreps_blocks_infos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.so2_linear_info">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">so2_linear_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.so2_linear_info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.utils.so2_linear_infos">
+<span class="sig-prename descclassname"><span class="pre">equitorch.utils.</span></span><span class="sig-name descname"><span class="pre">so2_linear_infos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">irreps_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.utils.so2_linear_infos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="transforms.html" class="btn btn-neutral float-left" title="equitorch.transforms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../generated/equitorch.irreps.html" class="btn btn-neutral float-right" title="equitorch.irreps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tong Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,744 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>equitorch.irreps &mdash; equitorch  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="equitorch.nn" href="nn.html" />
+    <link rel="prev" title="equitorch.constants" href="constants.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            equitorch
+              <img src="../_static/logo_.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="constants.html">equitorch.constants</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">equitorch.irreps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.Irrep"><code class="docutils literal notranslate"><span class="pre">Irrep</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irrep.l"><code class="docutils literal notranslate"><span class="pre">Irrep.l</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irrep.p"><code class="docutils literal notranslate"><span class="pre">Irrep.p</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irrep.dim"><code class="docutils literal notranslate"><span class="pre">Irrep.dim</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Irrep.dim</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.parse_irreps"><code class="docutils literal notranslate"><span class="pre">parse_irreps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.show_irreps"><code class="docutils literal notranslate"><span class="pre">show_irreps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.check_irreps"><code class="docutils literal notranslate"><span class="pre">check_irreps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.has_path"><code class="docutils literal notranslate"><span class="pre">has_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.Irreps"><code class="docutils literal notranslate"><span class="pre">Irreps</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.irrep_groups"><code class="docutils literal notranslate"><span class="pre">Irreps.irrep_groups</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.spherical_harmonics"><code class="docutils literal notranslate"><span class="pre">Irreps.spherical_harmonics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.both_parities"><code class="docutils literal notranslate"><span class="pre">Irreps.both_parities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">Irreps.irrep_groups</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.sorted"><code class="docutils literal notranslate"><span class="pre">Irreps.sorted()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.merged"><code class="docutils literal notranslate"><span class="pre">Irreps.merged()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.simplified"><code class="docutils literal notranslate"><span class="pre">Irreps.simplified()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.eliminate_parity"><code class="docutils literal notranslate"><span class="pre">Irreps.eliminate_parity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.short_repr"><code class="docutils literal notranslate"><span class="pre">Irreps.short_repr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.isomorphic_to"><code class="docutils literal notranslate"><span class="pre">Irreps.isomorphic_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.l_max"><code class="docutils literal notranslate"><span class="pre">Irreps.l_max</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.dim"><code class="docutils literal notranslate"><span class="pre">Irreps.dim</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.dims"><code class="docutils literal notranslate"><span class="pre">Irreps.dims()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.channels_divided"><code class="docutils literal notranslate"><span class="pre">Irreps.channels_divided()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.channels_multiplied"><code class="docutils literal notranslate"><span class="pre">Irreps.channels_multiplied()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.max_channels"><code class="docutils literal notranslate"><span class="pre">Irreps.max_channels()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.irreps.Irreps.squeeze_max_channels"><code class="docutils literal notranslate"><span class="pre">Irreps.squeeze_max_channels()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.unique_irreps"><code class="docutils literal notranslate"><span class="pre">unique_irreps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.irrep_segments"><code class="docutils literal notranslate"><span class="pre">irrep_segments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.irrep_indices"><code class="docutils literal notranslate"><span class="pre">irrep_indices()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.irrep_degrees"><code class="docutils literal notranslate"><span class="pre">irrep_degrees()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.element_degrees"><code class="docutils literal notranslate"><span class="pre">element_degrees()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.irreps.element_orders"><code class="docutils literal notranslate"><span class="pre">element_orders()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nn.html">equitorch.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structs.html">equitorch.structs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transforms.html">equitorch.transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">equitorch.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.irreps.html">equitorch.irreps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.nn.html">equitorch.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.transforms.html">equitorch.transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.constants.html">equitorch.constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.utils.html">equitorch.utils</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">equitorch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+      <li class="breadcrumb-item active">equitorch.irreps</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/irreps.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-equitorch.irreps">
+<span id="equitorch-irreps"></span><h1>equitorch.irreps<a class="headerlink" href="#module-equitorch.irreps" title="Link to this heading"></a></h1>
+<p>Provides classes and functions for O(3) and SO(3) irreducible representations (irreps).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.irreps.Irrep">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">Irrep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'e'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'o'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.Irrep" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">Irrep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'e'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'o'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An irreducible representation (irrep) of O(3) (when parity is <code class="docutils literal notranslate"><span class="pre">'e'</span></code> or <code class="docutils literal notranslate"><span class="pre">'o'</span></code>)
+or SO(3) (when the parity is None) group.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">Irrep</span></code> can be created with the following ways:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irrep</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">)</span>   <span class="c1"># O(3) irrep l=2 with even parity</span>
+<span class="go">2e</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irrep</span><span class="p">(</span><span class="s2">&quot;3o&quot;</span><span class="p">)</span>     <span class="c1"># O(3) irrep l=3 with odd parity</span>
+<span class="go">3o</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irrep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>        <span class="c1"># SO(3) vector irrep (p=None)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irrep</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># Using numeric parity values</span>
+<span class="go">2o</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.irreps.Irrep.l">
+<span class="sig-name descname"><span class="pre">l</span></span><a class="headerlink" href="#equitorch.irreps.Irrep.l" title="Link to this definition"></a></dt>
+<dd><p>Rotation order/degree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.irreps.Irrep.p">
+<span class="sig-name descname"><span class="pre">p</span></span><a class="headerlink" href="#equitorch.irreps.Irrep.p" title="Link to this definition"></a></dt>
+<dd><p>Parity component (-1, +1, or 0 for None).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.irreps.Irrep.dim">
+<span class="sig-name descname"><span class="pre">dim</span></span><a class="headerlink" href="#equitorch.irreps.Irrep.dim" title="Link to this definition"></a></dt>
+<dd><p>Dimensionality of the irrep (<span class="math notranslate nohighlight">\(2l + 1\)</span>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dim</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.irreps.parse_irreps">
+<span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">parse_irreps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str_irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep"><span class="pre">Irrep</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#equitorch.irreps.parse_irreps" title="Link to this definition"></a></dt>
+<dd><p>Parse an irreducible representation string and return a list of <code class="docutils literal notranslate"><span class="pre">(Irrep,</span> <span class="pre">multiplicity)</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>str_irreps</strong> (<em>str</em>) – The string representation of irreps.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of (Irrep, multiplicity) pairs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[tuple[<a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep">Irrep</a>, int]]</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">parse_irreps</span><span class="p">(</span><span class="s1">&#39;6x0+1+2e+5x2o+3x3e&#39;</span><span class="p">)</span>
+<span class="go">[(0, 6), (1, 1), (2e, 1), (2o, 5), (3e, 3)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.irreps.show_irreps">
+<span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">show_irreps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep"><span class="pre">Irrep</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#equitorch.irreps.show_irreps" title="Link to this definition"></a></dt>
+<dd><p>Convert a list of (Irrep, multiplicity) to string representation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.irreps.check_irreps">
+<span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">check_irreps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep"><span class="pre">Irrep</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></span><a class="headerlink" href="#equitorch.irreps.check_irreps" title="Link to this definition"></a></dt>
+<dd><p>Ensure the input is an Irreps object.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.irreps.has_path">
+<span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">has_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irrep_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep"><span class="pre">Irrep</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">irrep_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep"><span class="pre">Irrep</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">irrep_2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep"><span class="pre">Irrep</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#equitorch.irreps.has_path" title="Link to this definition"></a></dt>
+<dd><p>Check if a tensor product path exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>irrep_out</strong> (<a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep"><em>Irrep</em></a>) – The output irrep.</p></li>
+<li><p><strong>irrep_1</strong> (<a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep"><em>Irrep</em></a>) – The first input irrep.</p></li>
+<li><p><strong>irrep_2</strong> (<a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep"><em>Irrep</em></a><em>, </em><em>optional</em>) – The second input irrep. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the path exists, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">Irreps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep"><span class="pre">Irrep</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.Irreps" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Collection of irreducible representations with multiplicities.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">Irreps</span></code> can be created with the following ways:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;6x0 + 1 + 2e + 5x2o&quot;</span><span class="p">)</span>  <span class="c1"># Explicit O(3) irreps</span>
+<span class="go">Irreps(6x0+1+2e+5x2o)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>                 <span class="c1"># SO(3) irreps of l=0 to 3</span>
+<span class="go">Irreps(0+1+2+3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;1e&quot;</span><span class="p">,</span> <span class="s2">&quot;2o&quot;</span><span class="p">])</span>        <span class="c1"># Mixed SO(3) and O(3) irreps</span>
+<span class="go">Irreps(0+1e+2o)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;1e&quot;</span><span class="p">)</span>                   <span class="c1"># Single irrep</span>
+<span class="go">Irreps(1e)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.irrep_groups">
+<span class="sig-name descname"><span class="pre">irrep_groups</span></span><a class="headerlink" href="#equitorch.irreps.Irreps.irrep_groups" title="Link to this definition"></a></dt>
+<dd><p>List of irrep-multiplicity pairs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[tuple[<a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep">Irrep</a>, int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.spherical_harmonics">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">spherical_harmonics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_degree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parity_even_degree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'e'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'o'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'e'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></span><a class="headerlink" href="#equitorch.irreps.Irreps.spherical_harmonics" title="Link to this definition"></a></dt>
+<dd><p>Generate irreps with alternating parities based on degree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_degree</strong> (<em>int</em>) – Maximum degree (<span class="math notranslate nohighlight">\(l\)</span>) of the irreps to generate.</p></li>
+<li><p><strong>parity_even_degree</strong> (<em>str</em><em>, </em><em>optional</em>) – Parity to assign to even degrees.
+Can be ‘e’ or ‘o’. Defaults to ‘e’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Irreps with alternating parities from <span class="math notranslate nohighlight">\(l=0\)</span> to <span class="math notranslate nohighlight">\(l=      ext{max_degree}\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps">Irreps</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="o">.</span><span class="n">spherical_harmonics</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">)</span>
+<span class="go">Irreps(0e+1o+2e)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="o">.</span><span class="n">spherical_harmonics</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="go">Irreps(0o+1e+2o+3e)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.both_parities">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">both_parities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_degree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_degree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></span><a class="headerlink" href="#equitorch.irreps.Irreps.both_parities" title="Link to this definition"></a></dt>
+<dd><p>Generate irreps with both parities (even and odd) for each degree in a range.</p>
+<p>For each degree <span class="math notranslate nohighlight">\(l\)</span> from <code class="docutils literal notranslate"><span class="pre">min_degree</span></code> to <code class="docutils literal notranslate"><span class="pre">max_degree</span></code> (inclusive), this method creates
+two irreps: one with even parity (e) and one with odd parity (o). This is useful
+when you need to consider both possible parities for each degree in a specified range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_degree</strong> (<em>int</em>) – Maximum degree (<span class="math notranslate nohighlight">\(l\)</span>) of the irreps to generate.</p></li>
+<li><p><strong>min_degree</strong> (<em>int</em><em>, </em><em>optional</em>) – Minimum degree (<span class="math notranslate nohighlight">\(l\)</span>) to start from. Defaults to 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Irreps containing both even and odd parity versions for each degree
+from <span class="math notranslate nohighlight">\(l=      ext{min_degree}\)</span> to <span class="math notranslate nohighlight">\(l=   ext{max_degree}\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps">Irreps</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="o">.</span><span class="n">both_parities</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">Irreps(0e+0o+1e+1o)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="o">.</span><span class="n">both_parities</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">min_degree</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">Irreps(1e+1o+2e+2o)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="o">.</span><span class="n">both_parities</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">min_degree</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Irreps(2e+2o+3e+3o)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">irrep_groups</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep"><span class="pre">Irrep</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.sorted">
+<span class="sig-name descname"><span class="pre">sorted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></span><a class="headerlink" href="#equitorch.irreps.Irreps.sorted" title="Link to this definition"></a></dt>
+<dd><p>Returns a new Irreps instance with sorted <code class="docutils literal notranslate"><span class="pre">irrep_groups</span></code>.</p>
+<p>The default sorting key orders irreps by their degree (<span class="math notranslate nohighlight">\(l\)</span>), parity (None &lt; ‘e’ &lt; ‘o’),
+and multiplicity. This ensures a consistent and intuitive ordering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>by</strong> (<em>callable</em><em>, </em><em>optional</em>) – A function to use for sorting. Defaults to None.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new sorted Irreps instance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps">Irreps</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;0e+0o+0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sorted</span><span class="p">()</span>
+<span class="go">Irreps(0+0e+0o)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;3x0e+0e&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sorted</span><span class="p">()</span>
+<span class="go">Irreps(0e+3x0e)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.merged">
+<span class="sig-name descname"><span class="pre">merged</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></span><a class="headerlink" href="#equitorch.irreps.Irreps.merged" title="Link to this definition"></a></dt>
+<dd><p>Returns a new Irreps instance with consecutive identical irreps merged.
+Preserves the original order and only merges adjacent duplicates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A new Irreps instance with merged consecutive irreps.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps">Irreps</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;0e+0e+1o+2e+2e+2e&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
+<span class="go">Irreps(2x0e+1o+3x2e)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;0+0e+1o+0e+0e&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>  <span class="c1"># Non-consecutive 0e are not merged</span>
+<span class="go">Irreps(0e+1o+2x0e)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.simplified">
+<span class="sig-name descname"><span class="pre">simplified</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></span><a class="headerlink" href="#equitorch.irreps.Irreps.simplified" title="Link to this definition"></a></dt>
+<dd><p>Returns a new Irreps instance with merged multiplicities of identical irreps.</p>
+<p>Combines all occurrences of the same irrep into a single entry with summed multiplicities.
+The result is sorted to maintain a consistent order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A new simplified and sorted Irreps instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps">Irreps</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;0o+3x0o+0e+3x1+3x2e+4x1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">simplified</span><span class="p">()</span>
+<span class="go">Irreps(0e+4x0o+7x1+3x2e)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.eliminate_parity">
+<span class="sig-name descname"><span class="pre">eliminate_parity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simplified</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></span><a class="headerlink" href="#equitorch.irreps.Irreps.eliminate_parity" title="Link to this definition"></a></dt>
+<dd><p>Converts O(3) irreducible representations to SO(3) by eliminating parities.</p>
+<p>This method transforms the irreps list by setting the parity to 0 for
+all representations, projecting them from the O(3) group to the SO(3) group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>simplified</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, simplify the resulting Irreps. Defaults to False.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New set of irreducible representations in SO(3) format where all
+parities are 0.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps">Irreps</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;4x0o+4x0e+4x1o+4x1e&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">eliminate_parity</span><span class="p">()</span>
+<span class="go">Irreps(4x0+4x0+4x1+4x1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;4x0o+4x0e+4x1o+4x1e&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">eliminate_parity</span><span class="p">(</span><span class="n">simplified</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">Irreps(8x0+8x1)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.short_repr">
+<span class="sig-name descname"><span class="pre">short_repr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.Irreps.short_repr" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.isomorphic_to">
+<span class="sig-name descname"><span class="pre">isomorphic_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.Irreps.isomorphic_to" title="Link to this definition"></a></dt>
+<dd><p>Returns if self and other are two isomorphic Irreps, that is,
+they are equals after simplification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a><em> or </em><em>convertible</em>) – Representation to compare against</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if both representations have identical components after simplification</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;0e+0e+1o&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">isomorphic_to</span><span class="p">(</span><span class="s2">&quot;1x1o+2x0e&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.l_max">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">l_max</span></span><a class="headerlink" href="#equitorch.irreps.Irreps.l_max" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.dim">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dim</span></span><a class="headerlink" href="#equitorch.irreps.Irreps.dim" title="Link to this definition"></a></dt>
+<dd><p>Total dimensionality of the representation space.</p>
+<p>Calculated as sum of (irrep dimension × multiplicity) for all components</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;2x0e + 3x1o&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dim</span>  <span class="c1"># 2 * 1 + 3 * 3</span>
+<span class="go">11</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.dims">
+<span class="sig-name descname"><span class="pre">dims</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.Irreps.dims" title="Link to this definition"></a></dt>
+<dd><p>Generator yielding dimensionality of each irrep in expanded sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>int</em> – Dimension of each individual irrep instance</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;2x0+2x0e+3x1o+2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dims</span><span class="p">())</span>
+<span class="go">[1, 1, 1, 1, 3, 3, 3, 5]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.channels_divided">
+<span class="sig-name descname"><span class="pre">channels_divided</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mul</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.Irreps.channels_divided" title="Link to this definition"></a></dt>
+<dd><p>Divide all multiplicities by an integer factor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mul</strong> (<em>int</em>) – The integer factor to divide all multiplicities by. Must exactly divide
+all current multiplicities.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New Irreps with all multiplicities divided by mul</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps">Irreps</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – If any multiplicity is not divisible by mul</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;4x0e + 6x1o&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">channels_divided</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Irreps(2x0e+3x1o)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.channels_multiplied">
+<span class="sig-name descname"><span class="pre">channels_multiplied</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mul</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.Irreps.channels_multiplied" title="Link to this definition"></a></dt>
+<dd><p>Multiply all multiplicities by an integer factor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mul</strong> (<em>int</em>) – The integer factor to multiply all multiplicities by</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New Irreps with all multiplicities multiplied by mul</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps">Irreps</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;2x0e + 3x1o&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">channels_multiplied</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Irreps(4x0e+6x1o)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.max_channels">
+<span class="sig-name descname"><span class="pre">max_channels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.Irreps.max_channels" title="Link to this definition"></a></dt>
+<dd><p>Compute the greatest common divisor (GCD) of all multiplicities in the Irreps.</p>
+<p>This represents the largest integer factor by which all multiplicities can be divided
+while remaining integers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The GCD of all multiplicities in the representation</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;128x0e + 64x1o + 32x2e&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">max_channels</span><span class="p">()</span>
+<span class="go">32</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;3x0 + 5x1 + 7x2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">max_channels</span><span class="p">()</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.irreps.Irreps.squeeze_max_channels">
+<span class="sig-name descname"><span class="pre">squeeze_max_channels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.Irreps.squeeze_max_channels" title="Link to this definition"></a></dt>
+<dd><p>Simplify the representation by dividing all multiplicities by their GCD and return
+both the simplified representation and the GCD factor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing:
+- The simplified Irreps with multiplicities divided by their GCD
+- The max channels that was divided out</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[<a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps">Irreps</a>, int]</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;128x0e + 64x1o + 32x2e&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze_max_channels</span><span class="p">()</span>
+<span class="go">(Irreps(4x0e+2x1o+2e), 32)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;3x0 + 5x1 + 7x2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze_max_channels</span><span class="p">()</span>
+<span class="go">(Irreps(3x0+5x1+7x2), 1)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This is useful when you need both the simplified representation and the scaling
+factor that was removed from the multiplicities.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.irreps.unique_irreps">
+<span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">unique_irreps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.unique_irreps" title="Link to this definition"></a></dt>
+<dd><p>Identify unique irreducible representations (irreps) in a given Irreps object and
+provide a mapping from each unique irrep to the indices of its occurrences in the
+original Irreps object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>irreps</strong> (<a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a>) – An Irreps object containing a collection of irreducible representations.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>A tuple containing:
+- uniqued_irreps (Irreps): An Irreps object containing only the unique irreps</p>
+<blockquote>
+<div><p>from the input, maintaining the order of first appearance.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>unique_mapping (dict[Irrep, list[int]]): A dictionary where keys are the
+unique Irrep objects and values are lists of indices indicating where
+each unique irrep appeared in the original <code class="docutils literal notranslate"><span class="pre">irreps</span></code> sequence.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[<a class="reference internal" href="#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps">Irreps</a>, dict[<a class="reference internal" href="#equitorch.irreps.Irrep" title="equitorch.irreps.Irrep">Irrep</a>, list[int]]]</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">irreps_obj</span> <span class="o">=</span> <span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;0+0e+1o+0e+0e&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uniqued</span><span class="p">,</span> <span class="n">mapping</span> <span class="o">=</span> <span class="n">unique_irreps</span><span class="p">(</span><span class="n">irreps_obj</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">uniqued</span><span class="p">)</span>
+<span class="go">Irreps(0+0e+1o)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+<span class="go">{0: [0], 0e: [1, 3, 4], 1o: [2]}</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">irreps_obj_2</span> <span class="o">=</span> <span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;2x1e+0o+1e&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uniqued_2</span><span class="p">,</span> <span class="n">mapping_2</span> <span class="o">=</span> <span class="n">unique_irreps</span><span class="p">(</span><span class="n">irreps_obj_2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">uniqued_2</span><span class="p">)</span>
+<span class="go">Irreps(1e+0o)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mapping_2</span><span class="p">)</span>
+<span class="go">{1e: [0, 1, 3], 0o: [2]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.irreps.irrep_segments">
+<span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">irrep_segments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.irrep_segments" title="Link to this definition"></a></dt>
+<dd><p>Compute segment boundaries for the irreps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>irreps</strong> (<em>Irreps-like</em>) – Input irreps, can be any object that can be parsed to an <code class="docutils literal notranslate"><span class="pre">Irreps</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>1D tensor of integers where the i-th element represents the starting index of the i-th irrep’s block.
+The last element is the total dimension of all irreps combined.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">irrep_segments</span><span class="p">(</span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;1o&quot;</span><span class="p">))</span>
+<span class="go">[0, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">irrep_segments</span><span class="p">(</span><span class="n">Irreps</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)))</span>
+<span class="go">[0, 1, 4, 9, 16, 25]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">irrep_segments</span><span class="p">(</span><span class="s2">&quot;0+2x1e+3x2e+4&quot;</span><span class="p">)</span>
+<span class="go">[0, 1, 4, 7, 12, 17, 22, 31]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.irreps.irrep_indices">
+<span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">irrep_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.irrep_indices" title="Link to this definition"></a></dt>
+<dd><p>Generate the mapping of the tensor indices to their corresponding irrep indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>irreps</strong> (<em>Irreps-like</em>) – Input irreps, can be any object that can be parsed to an <code class="docutils literal notranslate"><span class="pre">Irreps</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>1D tensor where each element indicates the index of the irrep (in the input list)
+that the corresponding element belongs to.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">irrep_indices</span><span class="p">(</span><span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;1o&quot;</span><span class="p">))</span>
+<span class="go">tensor([0, 0, 0])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">irrep_indices</span><span class="p">(</span><span class="n">Irreps</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+<span class="go">tensor([0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">irrep_indices</span><span class="p">(</span><span class="s2">&quot;0+2x1e+2e&quot;</span><span class="p">)</span>
+<span class="go">tensor([0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.irreps.irrep_degrees">
+<span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">irrep_degrees</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.irrep_degrees" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.irreps.element_degrees">
+<span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">element_degrees</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.element_degrees" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.irreps.element_orders">
+<span class="sig-prename descclassname"><span class="pre">equitorch.irreps.</span></span><span class="sig-name descname"><span class="pre">element_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.irreps.element_orders" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="constants.html" class="btn btn-neutral float-left" title="equitorch.constants" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nn.html" class="btn btn-neutral float-right" title="equitorch.nn" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tong Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

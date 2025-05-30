@@ -1,0 +1,15 @@
+equitorch.nn.wigner\_d
+======================
+
+.. automodule:: equitorch.nn.wigner_d
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AlignToZWignerD
+      DenseWignerRotation
+      SparseWignerRotation
+      WignerD
+   

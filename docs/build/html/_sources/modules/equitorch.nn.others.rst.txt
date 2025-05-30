@@ -1,0 +1,7 @@
+equitorch.nn.others module
+==========================
+
+.. automodule:: equitorch.nn.others
+   :members:
+   :show-inheritance:
+   :undoc-members:

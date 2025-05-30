@@ -1,0 +1,10 @@
+equitorch.constants package
+===========================
+
+Module contents
+---------------
+
+.. automodule:: equitorch.constants
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,16 @@
+equitorch.ops.accumulated\_indexed\_product\_segment\_op
+========================================================
+
+.. automodule:: equitorch.ops.accumulated_indexed_product_segment_op
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      accumulated_indexed_inner_segment
+      accumulated_indexed_mul_segment
+      accumulated_indexed_outer_segment
+      accumulated_indexed_vecmat_segment
+      accumulated_indexed_vecsca_segment
+   

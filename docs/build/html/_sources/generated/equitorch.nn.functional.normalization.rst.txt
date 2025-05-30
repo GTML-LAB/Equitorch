@@ -1,0 +1,13 @@
+equitorch.nn.functional.normalization
+=====================================
+
+.. automodule:: equitorch.nn.functional.normalization
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      batch_rms_norm
+      layer_rms_norm
+   

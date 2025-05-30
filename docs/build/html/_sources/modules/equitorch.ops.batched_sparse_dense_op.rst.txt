@@ -1,0 +1,7 @@
+equitorch.ops.batched\_sparse\_dense\_op module
+===============================================
+
+.. automodule:: equitorch.ops.batched_sparse_dense_op
+   :members:
+   :show-inheritance:
+   :undoc-members:

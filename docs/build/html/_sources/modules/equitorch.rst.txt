@@ -1,0 +1,24 @@
+equitorch package
+=================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   equitorch.constants
+   equitorch.irreps
+   equitorch.nn
+   equitorch.ops
+   equitorch.structs
+   equitorch.transforms
+   equitorch.utils
+
+Module contents
+---------------
+
+.. automodule:: equitorch
+   :members:
+   :show-inheritance:
+   :undoc-members:

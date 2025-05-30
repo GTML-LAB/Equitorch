@@ -1,0 +1,6 @@
+equitorch.ops.spherical\_harmonics
+==================================
+
+.. automodule:: equitorch.ops.spherical_harmonics
+
+   

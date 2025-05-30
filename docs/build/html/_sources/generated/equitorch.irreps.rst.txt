@@ -1,0 +1,28 @@
+﻿equitorch.irreps
+================
+
+.. automodule:: equitorch.irreps
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      check_irreps
+      element_degrees
+      element_orders
+      has_path
+      irrep_degrees
+      irrep_indices
+      irrep_segments
+      parse_irreps
+      show_irreps
+      unique_irreps
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Irrep
+      Irreps
+   

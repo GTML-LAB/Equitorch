@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>equitorch.nn &mdash; equitorch  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="equitorch.nn.functional" href="equitorch.nn.functional.html" />
+    <link rel="prev" title="equitorch.irreps" href="equitorch.irreps.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            equitorch
+              <img src="../_static/logo_.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../modules/constants.html">equitorch.constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/irreps.html">equitorch.irreps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/nn.html">equitorch.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/structs.html">equitorch.structs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/transforms.html">equitorch.transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/utils.html">equitorch.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equitorch.irreps.html">equitorch.irreps</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">equitorch.nn</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="equitorch.nn.functional.html">equitorch.nn.functional</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="equitorch.transforms.html">equitorch.transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equitorch.constants.html">equitorch.constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equitorch.utils.html">equitorch.utils</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">equitorch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+      <li class="breadcrumb-item active">equitorch.nn</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/equitorch.nn.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-equitorch.nn">
+<span id="equitorch-nn"></span><h1>equitorch.nn<a class="headerlink" href="#module-equitorch.nn" title="Link to this heading"></a></h1>
+<p>Contains equivariant neural network modules and functionalities.</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.initialize_tensor_product" title="equitorch.nn.initialize_tensor_product"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize_tensor_product</span></code></a>(weight, feature_mode)</p></td>
+<td><p>Initialize weights for tensor product operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.initialize_so3_so2_linear" title="equitorch.nn.initialize_so3_so2_linear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize_so3_so2_linear</span></code></a>(weight, feature_mode)</p></td>
+<td><p>Initialize weights for SO(3) or SO(2) linear operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.initialize_linear" title="equitorch.nn.initialize_linear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize_linear</span></code></a>(weight[, gain, channel_normed])</p></td>
+<td><p>Initialize weights for standard linear operations.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.SO3Linear" title="equitorch.nn.SO3Linear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SO3Linear</span></code></a>(irreps_in1, irreps_in2, irreps_out)</p></td>
+<td><p>SO(3) equivariant linear layer using tensor products.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.IrrepWiseLinear" title="equitorch.nn.IrrepWiseLinear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IrrepWiseLinear</span></code></a>(irreps, channels_in, ...[, ...])</p></td>
+<td><p>Irrep-wise linear layer (channel mixing).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.IrrepsLinear" title="equitorch.nn.IrrepsLinear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IrrepsLinear</span></code></a>(irreps_in, irreps_out, ...[, ...])</p></td>
+<td><p>Equivariant linear layer that preserves the spherical tensor structure but mixes channels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.SO2Linear" title="equitorch.nn.SO2Linear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SO2Linear</span></code></a>(irreps_in, irreps_out[, ...])</p></td>
+<td><p>SO(2) equivariant linear layer using tensor products.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.SplitIrreps" title="equitorch.nn.SplitIrreps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SplitIrreps</span></code></a>(irreps, split_num_irreps[, dim])</p></td>
+<td><p>A module that splits input tensors according to specified irrep segments.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.Separable" title="equitorch.nn.Separable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Separable</span></code></a>(irreps, split_num_irreps, sub_modules)</p></td>
+<td><p>A module that applies different transformations to different parts of input tensor according to irreducible representations (irreps), with optional concatenation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.SphericalHarmonics" title="equitorch.nn.SphericalHarmonics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SphericalHarmonics</span></code></a>(l_max[, normalize_input, ...])</p></td>
+<td><p>Computes spherical harmonics from input Cartesian coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.XYZToSpherical" title="equitorch.nn.XYZToSpherical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XYZToSpherical</span></code></a>([normalize_input, with_r, ...])</p></td>
+<td><p>Module to convert Cartesian coordinates ((x, y, z)) to spherical ((theta, phi, r)).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.SphericalToXYZ" title="equitorch.nn.SphericalToXYZ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SphericalToXYZ</span></code></a>([dim])</p></td>
+<td><p>Module to convert spherical coordinates ((theta, phi, r)) to Cartesian ((x, y, z)).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.XYZToSinCos" title="equitorch.nn.XYZToSinCos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XYZToSinCos</span></code></a>(max_m[, normalize_input, ...])</p></td>
+<td><p>Module to convert Cartesian coordinates ((x, y, z)) to sin/cos embeddings of the spherical angles (theta) and (phi).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.BatchRMSNorm" title="equitorch.nn.BatchRMSNorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BatchRMSNorm</span></code></a>(irreps, channels[, eps, ...])</p></td>
+<td><p>Applies Batch Root Mean Square Normalization for equivariant features.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.LayerRMSNorm" title="equitorch.nn.LayerRMSNorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LayerRMSNorm</span></code></a>(irreps, channels[, eps, ...])</p></td>
+<td><p>Applies Irrep-wise Layer Root Mean Square Normalization.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.TensorProduct" title="equitorch.nn.TensorProduct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TensorProduct</span></code></a>(irreps_in1, irreps_in2, irreps_out)</p></td>
+<td><p>Computes the tensor product of two equivariant feature tensors.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.TensorDot" title="equitorch.nn.TensorDot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TensorDot</span></code></a>(irreps, feature_mode[, scaled])</p></td>
+<td><p>Computes the equivariant irrep-wise dot product of two feature tensors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.SparseWignerRotation" title="equitorch.nn.SparseWignerRotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SparseWignerRotation</span></code></a>(irreps)</p></td>
+<td><p>Applies a sparse Wigner D-matrix rotation to input features.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.DenseWignerRotation" title="equitorch.nn.DenseWignerRotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DenseWignerRotation</span></code></a>(irreps)</p></td>
+<td><p>Applies a dense Wigner D-matrix rotation to input features.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.WignerD" title="equitorch.nn.WignerD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WignerD</span></code></a>(irreps)</p></td>
+<td><p>Computes the dense Wigner D-matrix <span class="math notranslate nohighlight">\(D(R)\)</span> for given <a class="reference internal" href="../modules/irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><code class="xref py py-class docutils literal notranslate"><span class="pre">Irreps</span></code></a> and Euler angles <span class="math notranslate nohighlight">\((\alpha, \beta, \gamma)\)</span>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.AlignToZWignerD" title="equitorch.nn.AlignToZWignerD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AlignToZWignerD</span></code></a>(irreps[, normalized, eps])</p></td>
+<td><p>Computes the Wigner D-matrix <span class="math notranslate nohighlight">\(D(R_{align})\)</span> that rotates a given vector <span class="math notranslate nohighlight">\(\vec{v} = (x, y, z)\)</span> onto the z-axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.PolynomialCutoff" title="equitorch.nn.PolynomialCutoff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PolynomialCutoff</span></code></a>(r_max[, r_min, p])</p></td>
+<td><p>Polynomial cutoff, as proposed in <a class="reference external" href="https://arxiv.org/abs/2003.03123">DimeNet</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.CosineCutoff" title="equitorch.nn.CosineCutoff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CosineCutoff</span></code></a>(r_max[, r_min])</p></td>
+<td><p>The cosine cutoff function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.MollifierCutoff" title="equitorch.nn.MollifierCutoff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MollifierCutoff</span></code></a>(r_max[, r_min, eps])</p></td>
+<td><p>The mollifier cutoff function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.Gate" title="equitorch.nn.Gate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gate</span></code></a>(irreps[, activation, irrep_wise])</p></td>
+<td><p>Applies element-wise gates to equivariant features.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.SinCos" title="equitorch.nn.SinCos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SinCos</span></code></a>(max_m[, with_ones, component_normalize])</p></td>
+<td><p>Module wrapper for the <code class="xref py py-func docutils literal notranslate"><span class="pre">sincos()</span></code> function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.BesselBasis" title="equitorch.nn.BesselBasis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BesselBasis</span></code></a>(r_max[, num_basis, trainable])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.SquaredNorm" title="equitorch.nn.SquaredNorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SquaredNorm</span></code></a>(irreps[, scaled])</p></td>
+<td><p>Computes the squared L2 norm for each irrep block in an input tensor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.Norm" title="equitorch.nn.Norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Norm</span></code></a>(irreps[, scaled])</p></td>
+<td><p>Computes the L2 norm for each irrep block in an input tensor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.MeanSquaredNorm" title="equitorch.nn.MeanSquaredNorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MeanSquaredNorm</span></code></a>(irreps[, scaled, dim])</p></td>
+<td><p>Computes the mean of squared L2 norms over a specified dimension (batch or channel) for each irrep block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.Dropout" title="equitorch.nn.Dropout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dropout</span></code></a>([p, irreps, irrep_wise, work_on_eval])</p></td>
+<td><p>Apply dropout to equivariant features.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/nn.html#equitorch.nn.AnglesToMatrix" title="equitorch.nn.AnglesToMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AnglesToMatrix</span></code></a>()</p></td>
+<td><p>Module to convert Euler angles (ZYZ convention) to rotation matrices.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Modules</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="equitorch.nn.functional.html#module-equitorch.nn.functional" title="equitorch.nn.functional"><code class="xref py py-obj docutils literal notranslate"><span class="pre">functional</span></code></a></p></td>
+<td><p>Provides functional implementations of equivariant neural network operations.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="equitorch.irreps.html" class="btn btn-neutral float-left" title="equitorch.irreps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="equitorch.nn.functional.html" class="btn btn-neutral float-right" title="equitorch.nn.functional" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tong Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

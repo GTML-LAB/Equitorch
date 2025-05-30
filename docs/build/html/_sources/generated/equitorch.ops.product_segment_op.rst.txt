@@ -1,0 +1,16 @@
+equitorch.ops.product\_segment\_op
+==================================
+
+.. automodule:: equitorch.ops.product_segment_op
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      inner_segment
+      mul_segment
+      outer_segment
+      vecmat_segment
+      vecsca_segment
+   

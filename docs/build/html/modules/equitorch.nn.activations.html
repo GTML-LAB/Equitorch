@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>equitorch.nn.activations module &mdash; equitorch  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="equitorch.nn.angular module" href="equitorch.nn.angular.html" />
+    <link rel="prev" title="equitorch.nn.functional.wigner_d module" href="equitorch.nn.functional.wigner_d.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            equitorch
+              <img src="../_static/logo_.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">equitorch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="equitorch.html">equitorch package</a></li>
+          <li class="breadcrumb-item"><a href="equitorch.nn.html">equitorch.nn package</a></li>
+      <li class="breadcrumb-item active">equitorch.nn.activations module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/equitorch.nn.activations.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-equitorch.nn.activations">
+<span id="equitorch-nn-activations-module"></span><h1>equitorch.nn.activations module<a class="headerlink" href="#module-equitorch.nn.activations" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.nn.activations.Gate">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.nn.activations.</span></span><span class="sig-name descname"><span class="pre">Gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">irrep_wise</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.nn.activations.Gate" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Applies element-wise gates to equivariant features.</p>
+<p>This module implements gating nonlinearities for features represented by <a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><code class="xref py py-class docutils literal notranslate"><span class="pre">Irreps</span></code></a>.
+It can operate in two primary modes based on how the gate values are provided:</p>
+<ol class="arabic simple">
+<li><p><strong>Separate Gates (``gate`` argument provided):</strong>
+The module takes two distinct inputs: <code class="docutils literal notranslate"><span class="pre">input</span></code> (the features to be gated) and <code class="docutils literal notranslate"><span class="pre">gate</span></code> (the gate scalars).</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">irrep_wise=True</span></code> (default): Each gate scalar in the <code class="docutils literal notranslate"><span class="pre">gate</span></code> tensor is applied to its corresponding
+irrep block within the <code class="docutils literal notranslate"><span class="pre">input</span></code> features. The <code class="docutils literal notranslate"><span class="pre">gate</span></code> tensor should have a shape compatible with
+<code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">num_gates,</span> <span class="pre">channels)</span></code>, where <code class="docutils literal notranslate"><span class="pre">num_gates</span></code> is the number of irreps in <code class="docutils literal notranslate"><span class="pre">irreps</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">irrep_wise=False</span></code>: A single gate scalar (or a set of scalars broadcastable across irreps)
+is applied to all irrep blocks in the <code class="docutils literal notranslate"><span class="pre">input</span></code> features. The <code class="docutils literal notranslate"><span class="pre">gate</span></code> tensor should have a shape
+compatible with <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">1,</span> <span class="pre">channels)</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Concatenated Input (``gate=None``):</strong>
+The module takes a single <code class="docutils literal notranslate"><span class="pre">input</span></code> tensor where the features and their corresponding gate scalars
+are concatenated along the spherical dimension (<code class="docutils literal notranslate"><span class="pre">dim=-2</span></code>). The last <code class="docutils literal notranslate"><span class="pre">num_gates</span></code> slices along this
+dimension are interpreted as the gate scalars. The <code class="docutils literal notranslate"><span class="pre">input</span></code> tensor shape is expected to be
+<code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">irreps.dim</span> <span class="pre">+</span> <span class="pre">num_gates,</span> <span class="pre">channels)</span></code>.
+The module internally splits this tensor into features and gates, optionally applies an activation
+function to the extracted gates, and then proceeds with the gating operation as described in mode 1.</p></li>
+</ol>
+<p>An optional activation function can be applied to the gate scalars before they modulate the features.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">equitorch.irreps</span><span class="w"> </span><span class="kn">import</span> <span class="n">Irreps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">equitorch.nn</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gate</span>
+
+<span class="n">irreps</span> <span class="o">=</span> <span class="n">Irreps</span><span class="p">(</span><span class="s2">&quot;1x0e + 2x1o&quot;</span><span class="p">)</span> <span class="c1"># Example: one scalar, two l=1 odd irreps</span>
+<span class="n">gate_module</span> <span class="o">=</span> <span class="n">Gate</span><span class="p">(</span><span class="n">irreps</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">())</span>
+
+<span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span>
+<span class="n">num_gates</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">irreps</span><span class="p">)</span> <span class="c1"># This will be 2 for the example irreps</span>
+
+<span class="c1"># Mode 1: Separate input and gate tensors (irrep_wise=True)</span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">irreps</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span> <span class="n">channels</span><span class="p">)</span>
+<span class="n">gates</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">num_gates</span><span class="p">,</span> <span class="n">channels</span><span class="p">)</span>
+<span class="n">output_separate</span> <span class="o">=</span> <span class="n">gate_module</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">gates</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output shape (separate gates): </span><span class="si">{</span><span class="n">output_separate</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mode 2: Concatenated input tensor</span>
+<span class="c1"># irreps.dim for &quot;1x0e + 2x1o&quot; is 1*1 + 2*3 = 7</span>
+<span class="c1"># num_gates is 2</span>
+<span class="n">concatenated_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">irreps</span><span class="o">.</span><span class="n">dim</span> <span class="o">+</span> <span class="n">num_gates</span><span class="p">,</span> <span class="n">channels</span><span class="p">)</span>
+<span class="n">output_concatenated</span> <span class="o">=</span> <span class="n">gate_module</span><span class="p">(</span><span class="n">concatenated_input</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output shape (concatenated input): </span><span class="si">{</span><span class="n">output_concatenated</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>irreps</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a>) – The irreducible representations of the feature part of the input tensor
+(i.e., the part that will be gated).</p></li>
+<li><p><strong>activation</strong> (<em>torch.nn.Module</em><em>, </em><em>optional</em>) – An activation function to be applied to the
+gate scalars before the gating operation. Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code> (no activation).</p></li>
+<li><p><strong>irrep_wise</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines how gates are applied.
+If <code class="docutils literal notranslate"><span class="pre">True</span></code> (default), gates are applied irrep-by-irrep. This requires the <code class="docutils literal notranslate"><span class="pre">gate</span></code>
+tensor (if provided separately) to have a shape like <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">num_gates,</span> <span class="pre">channels)</span></code>.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, a single gate (or a broadcastable set) is applied across all irreps.
+This requires the <code class="docutils literal notranslate"><span class="pre">gate</span></code> tensor (if provided separately) to have a shape like
+<code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">1,</span> <span class="pre">channels)</span></code>. <code class="docutils literal notranslate"><span class="pre">num_gates</span></code> corresponds to <code class="docutils literal notranslate"><span class="pre">len(irreps)</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.activations.Gate.irreps_info">
+<span class="sig-name descname"><span class="pre">irreps_info</span></span><a class="headerlink" href="#equitorch.nn.activations.Gate.irreps_info" title="Link to this definition"></a></dt>
+<dd><p>Cached information about the input feature irreps, used for efficient gating.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="equitorch.structs.html#equitorch.structs.IrrepsInfo" title="equitorch.structs.IrrepsInfo">IrrepsInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.activations.Gate.num_gates">
+<span class="sig-name descname"><span class="pre">num_gates</span></span><a class="headerlink" href="#equitorch.nn.activations.Gate.num_gates" title="Link to this definition"></a></dt>
+<dd><p>The number of distinct gate scalars, equal to <code class="docutils literal notranslate"><span class="pre">len(irreps)</span></code>.
+This dictates the expected size of the gate dimension in the <code class="docutils literal notranslate"><span class="pre">gate</span></code> tensor
+or the number of gate slices in a concatenated input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">irreps_info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="equitorch.structs.html#equitorch.structs.IrrepsInfo" title="equitorch.structs.IrrepsInfo"><span class="pre">IrrepsInfo</span></a></em><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.activations.Gate.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#equitorch.nn.activations.Gate.training" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="equitorch.nn.functional.wigner_d.html" class="btn btn-neutral float-left" title="equitorch.nn.functional.wigner_d module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="equitorch.nn.angular.html" class="btn btn-neutral float-right" title="equitorch.nn.angular module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tong Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

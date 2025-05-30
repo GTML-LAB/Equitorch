@@ -1,0 +1,7 @@
+equitorch.ops.kernel\_dense module
+==================================
+
+.. automodule:: equitorch.ops.kernel_dense
+   :members:
+   :show-inheritance:
+   :undoc-members:

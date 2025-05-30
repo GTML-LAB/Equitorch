@@ -1,0 +1,7 @@
+equitorch.nn.functional.wigner\_d module
+========================================
+
+.. automodule:: equitorch.nn.functional.wigner_d
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+equitorch.ops.indexed\_scale\_segment\_op module
+================================================
+
+.. automodule:: equitorch.ops.indexed_scale_segment_op
+   :members:
+   :show-inheritance:
+   :undoc-members:

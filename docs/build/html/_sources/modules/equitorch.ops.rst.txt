@@ -1,0 +1,93 @@
+equitorch.ops package
+=====================
+
+Submodules
+----------
+
+equitorch.ops.accumulated\_indexed\_product\_segment\_op module
+---------------------------------------------------------------
+
+.. automodule:: equitorch.ops.accumulated_indexed_product_segment_op
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.ops.batched\_sparse\_dense\_op module
+-----------------------------------------------
+
+.. automodule:: equitorch.ops.batched_sparse_dense_op
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.ops.indexed\_product\_op module
+-----------------------------------------
+
+.. automodule:: equitorch.ops.indexed_product_op
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.ops.indexed\_product\_scale\_segment\_op module
+---------------------------------------------------------
+
+.. automodule:: equitorch.ops.indexed_product_scale_segment_op
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.ops.indexed\_product\_segment\_op module
+--------------------------------------------------
+
+.. automodule:: equitorch.ops.indexed_product_segment_op
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.ops.indexed\_scale\_segment\_op module
+------------------------------------------------
+
+.. automodule:: equitorch.ops.indexed_scale_segment_op
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.ops.kernel\_dense module
+----------------------------------
+
+.. automodule:: equitorch.ops.kernel_dense
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.ops.kernel\_utils module
+----------------------------------
+
+.. automodule:: equitorch.ops.kernel_utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.ops.product\_segment\_op module
+-----------------------------------------
+
+.. automodule:: equitorch.ops.product_segment_op
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.ops.spherical\_harmonics module
+-----------------------------------------
+
+.. automodule:: equitorch.ops.spherical_harmonics
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: equitorch.ops
+   :members:
+   :show-inheritance:
+   :undoc-members:

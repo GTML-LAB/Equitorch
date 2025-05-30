@@ -1,0 +1,12 @@
+equitorch.nn.functional.angular
+===============================
+
+.. automodule:: equitorch.nn.functional.angular
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      sincos
+   

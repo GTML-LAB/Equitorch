@@ -1,0 +1,10 @@
+equitorch.structs package
+=========================
+
+Module contents
+---------------
+
+.. automodule:: equitorch.structs
+   :members:
+   :show-inheritance:
+   :undoc-members:

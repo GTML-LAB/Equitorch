@@ -1,0 +1,7 @@
+equitorch.nn.functional.normalization module
+============================================
+
+.. automodule:: equitorch.nn.functional.normalization
+   :members:
+   :show-inheritance:
+   :undoc-members:

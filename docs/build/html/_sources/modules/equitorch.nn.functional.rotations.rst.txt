@@ -1,0 +1,7 @@
+equitorch.nn.functional.rotations module
+========================================
+
+.. automodule:: equitorch.nn.functional.rotations
+   :members:
+   :show-inheritance:
+   :undoc-members:

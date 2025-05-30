@@ -1,0 +1,7 @@
+equitorch.nn.tensor\_products module
+====================================
+
+.. automodule:: equitorch.nn.tensor_products
+   :members:
+   :show-inheritance:
+   :undoc-members:

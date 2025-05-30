@@ -1,0 +1,7 @@
+equitorch.ops.accumulated\_indexed\_product\_segment\_op module
+===============================================================
+
+.. automodule:: equitorch.ops.accumulated_indexed_product_segment_op
+   :members:
+   :show-inheritance:
+   :undoc-members:

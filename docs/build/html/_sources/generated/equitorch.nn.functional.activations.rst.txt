@@ -1,0 +1,12 @@
+equitorch.nn.functional.activations
+===================================
+
+.. automodule:: equitorch.nn.functional.activations
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      gating
+   

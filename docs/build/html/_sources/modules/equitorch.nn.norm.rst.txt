@@ -1,0 +1,7 @@
+equitorch.nn.norm module
+========================
+
+.. automodule:: equitorch.nn.norm
+   :members:
+   :show-inheritance:
+   :undoc-members:

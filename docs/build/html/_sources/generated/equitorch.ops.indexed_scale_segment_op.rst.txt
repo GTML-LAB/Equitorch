@@ -1,0 +1,14 @@
+equitorch.ops.indexed\_scale\_segment\_op
+=========================================
+
+.. automodule:: equitorch.ops.indexed_scale_segment_op
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      indexed_scale_segment
+      indexed_scale_segment_cpu
+      indexed_scale_segment_gpu
+   

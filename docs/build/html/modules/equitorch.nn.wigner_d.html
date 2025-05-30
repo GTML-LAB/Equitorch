@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>equitorch.nn.wigner_d module &mdash; equitorch  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="equitorch.ops package" href="equitorch.ops.html" />
+    <link rel="prev" title="equitorch.nn.tensor_products module" href="equitorch.nn.tensor_products.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            equitorch
+              <img src="../_static/logo_.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">equitorch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="equitorch.html">equitorch package</a></li>
+          <li class="breadcrumb-item"><a href="equitorch.nn.html">equitorch.nn package</a></li>
+      <li class="breadcrumb-item active">equitorch.nn.wigner_d module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/equitorch.nn.wigner_d.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-equitorch.nn.wigner_d">
+<span id="equitorch-nn-wigner-d-module"></span><h1>equitorch.nn.wigner_d module<a class="headerlink" href="#module-equitorch.nn.wigner_d" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.nn.wigner_d.SparseWignerRotation">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.nn.wigner_d.</span></span><span class="sig-name descname"><span class="pre">SparseWignerRotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.nn.wigner_d.SparseWignerRotation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Applies a sparse Wigner D-matrix rotation to input features.</p>
+<p>This module computes the rotation based on Euler angles (<span class="math notranslate nohighlight">\(\alpha, \beta, \gamma\)</span>)
+provided as precomputed sin/cos tensors. It utilizes sparse matrix operations for the rotation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is currently suggested to use <a class="reference internal" href="#equitorch.nn.wigner_d.DenseWignerRotation" title="equitorch.nn.wigner_d.DenseWignerRotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">DenseWignerRotation</span></code></a> or <a class="reference internal" href="#equitorch.nn.wigner_d.WignerD" title="equitorch.nn.wigner_d.WignerD"><code class="xref py py-class docutils literal notranslate"><span class="pre">WignerD</span></code></a>
+for applying rotations, at least when gradients with respect to angles are not required.</p>
+</div>
+<p>The Wigner D-matrix <span class="math notranslate nohighlight">\(D^l_{m'm}(R)\)</span> transforms spherical tensors under rotation <span class="math notranslate nohighlight">\(R\)</span>.
+This module applies such transformations for a given <a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><code class="xref py py-class docutils literal notranslate"><span class="pre">Irreps</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>irreps</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a>) – The irreducible representations defining the input and output feature space.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.wigner_d.SparseWignerRotation.info">
+<span class="sig-name descname"><span class="pre">info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="equitorch.structs.html#equitorch.structs.WignerRotationInfo" title="equitorch.structs.WignerRotationInfo"><span class="pre">WignerRotationInfo</span></a></em><a class="headerlink" href="#equitorch.nn.wigner_d.SparseWignerRotation.info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.wigner_d.SparseWignerRotation.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#equitorch.nn.wigner_d.SparseWignerRotation.training" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.nn.wigner_d.DenseWignerRotation">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.nn.wigner_d.</span></span><span class="sig-name descname"><span class="pre">DenseWignerRotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.nn.wigner_d.DenseWignerRotation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Applies a dense Wigner D-matrix rotation to input features.</p>
+<p>This module takes a precomputed dense Wigner D-matrix and applies it to the input features.
+The Wigner D-matrix <span class="math notranslate nohighlight">\(D(R)\)</span> itself should be computed separately, for example, using the <a class="reference internal" href="#equitorch.nn.wigner_d.WignerD" title="equitorch.nn.wigner_d.WignerD"><code class="xref py py-class docutils literal notranslate"><span class="pre">WignerD</span></code></a> module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>irreps</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a>) – The irreducible representations defining the input and output feature space.
+This is used for validation and representation purposes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.nn.wigner_d.WignerD">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.nn.wigner_d.</span></span><span class="sig-name descname"><span class="pre">WignerD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.nn.wigner_d.WignerD" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Computes the dense Wigner D-matrix <span class="math notranslate nohighlight">\(D(R)\)</span> for given <a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><code class="xref py py-class docutils literal notranslate"><span class="pre">Irreps</span></code></a> and Euler angles <span class="math notranslate nohighlight">\((\alpha, \beta, \gamma)\)</span>.</p>
+<p>The Wigner D-matrix is constructed based on the ZYZ Euler angle convention:</p>
+<div class="math notranslate nohighlight">
+\[D(\alpha, \beta, \gamma) = D_z(\alpha) D_y(\beta) D_z(\gamma)\]</div>
+<p>This module caches the necessary sparse rotation information and an identity matrix
+to efficiently compute the dense D-matrix using the <a class="reference internal" href="equitorch.nn.functional.wigner_d.html#equitorch.nn.functional.wigner_d.wigner_d_matrix" title="equitorch.nn.functional.wigner_d.wigner_d_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">wigner_d_matrix()</span></code></a> functional.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>irreps</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a>) – The irreducible representations for which to compute the D-matrix.
+The resulting D-matrix will have dimensions <code class="docutils literal notranslate"><span class="pre">(irreps.dim,</span> <span class="pre">irreps.dim)</span></code>.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.wigner_d.WignerD.info">
+<span class="sig-name descname"><span class="pre">info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="equitorch.structs.html#equitorch.structs.WignerRotationInfo" title="equitorch.structs.WignerRotationInfo"><span class="pre">WignerRotationInfo</span></a></em><a class="headerlink" href="#equitorch.nn.wigner_d.WignerD.info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.wigner_d.WignerD.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#equitorch.nn.wigner_d.WignerD.training" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.nn.wigner_d.AlignToZWignerD">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.nn.wigner_d.</span></span><span class="sig-name descname"><span class="pre">AlignToZWignerD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irreps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><span class="pre">Irreps</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalized</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-14</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.nn.wigner_d.AlignToZWignerD" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Computes the Wigner D-matrix <span class="math notranslate nohighlight">\(D(R_{align})\)</span> that rotates a given vector <span class="math notranslate nohighlight">\(\vec{v} = (x, y, z)\)</span> onto the z-axis.</p>
+<p>The rotation <span class="math notranslate nohighlight">\(R_{align}\)</span> is defined by Euler angles <span class="math notranslate nohighlight">\((0, -\theta, -\phi)\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> are the
+polar and azimuthal angles of the vector <span class="math notranslate nohighlight">\(\vec{v}\)</span>, respectively. This means:</p>
+<div class="math notranslate nohighlight">
+\[R_{align} \vec{v} = ||\vec{v}|| \hat{z}\]</div>
+<p>The Wigner D-matrix is then <span class="math notranslate nohighlight">\(D(0, -\theta, -\phi)\)</span>.</p>
+<p>This module caches the necessary sparse rotation information and an identity matrix.
+It utilizes the <a class="reference internal" href="equitorch.nn.functional.wigner_d.html#equitorch.nn.functional.wigner_d.align_to_z_wigner_d" title="equitorch.nn.functional.wigner_d.align_to_z_wigner_d"><code class="xref py py-func docutils literal notranslate"><span class="pre">align_to_z_wigner_d()</span></code></a> functional.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>irreps</strong> (<a class="reference internal" href="equitorch.irreps.html#equitorch.irreps.Irreps" title="equitorch.irreps.Irreps"><em>Irreps</em></a>) – The irreducible representations for which to compute the D-matrix.</p></li>
+<li><p><strong>normalized</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to normalize the input <code class="docutils literal notranslate"><span class="pre">xyz</span></code> vector
+before calculating angles for rotation. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, effectively rotates <span class="math notranslate nohighlight">\(\hat{v}\)</span>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>eps</strong> (<em>float</em><em>, </em><em>optional</em>) – Small <span class="math notranslate nohighlight">\(\epsilon\)</span> value for numerical stability in angle calculation.
+Defaults to <code class="docutils literal notranslate"><span class="pre">1e-14</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.wigner_d.AlignToZWignerD.info">
+<span class="sig-name descname"><span class="pre">info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="equitorch.structs.html#equitorch.structs.WignerRotationInfo" title="equitorch.structs.WignerRotationInfo"><span class="pre">WignerRotationInfo</span></a></em><a class="headerlink" href="#equitorch.nn.wigner_d.AlignToZWignerD.info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.nn.wigner_d.AlignToZWignerD.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#equitorch.nn.wigner_d.AlignToZWignerD.training" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="equitorch.nn.tensor_products.html" class="btn btn-neutral float-left" title="equitorch.nn.tensor_products module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="equitorch.ops.html" class="btn btn-neutral float-right" title="equitorch.ops package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tong Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

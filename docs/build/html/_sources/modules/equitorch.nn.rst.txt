@@ -1,0 +1,133 @@
+equitorch.nn package
+====================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   equitorch.nn.functional
+
+Submodules
+----------
+
+equitorch.nn.activations module
+-------------------------------
+
+.. automodule:: equitorch.nn.activations
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.angular module
+---------------------------
+
+.. automodule:: equitorch.nn.angular
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.cutoffs module
+---------------------------
+
+.. automodule:: equitorch.nn.cutoffs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.dropout module
+---------------------------
+
+.. automodule:: equitorch.nn.dropout
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.init module
+------------------------
+
+.. automodule:: equitorch.nn.init
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.linears module
+---------------------------
+
+.. automodule:: equitorch.nn.linears
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.norm module
+------------------------
+
+.. automodule:: equitorch.nn.norm
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.normalization module
+---------------------------------
+
+.. automodule:: equitorch.nn.normalization
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.others module
+--------------------------
+
+.. automodule:: equitorch.nn.others
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.radials module
+---------------------------
+
+.. automodule:: equitorch.nn.radials
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.rotations module
+-----------------------------
+
+.. automodule:: equitorch.nn.rotations
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.sphericals module
+------------------------------
+
+.. automodule:: equitorch.nn.sphericals
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.tensor\_products module
+------------------------------------
+
+.. automodule:: equitorch.nn.tensor_products
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.wigner\_d module
+-----------------------------
+
+.. automodule:: equitorch.nn.wigner_d
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: equitorch.nn
+   :members:
+   :show-inheritance:
+   :undoc-members:

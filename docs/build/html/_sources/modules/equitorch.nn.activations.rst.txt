@@ -1,0 +1,7 @@
+equitorch.nn.activations module
+===============================
+
+.. automodule:: equitorch.nn.activations
+   :members:
+   :show-inheritance:
+   :undoc-members:

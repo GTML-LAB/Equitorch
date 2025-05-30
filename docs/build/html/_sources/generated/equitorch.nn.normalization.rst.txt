@@ -1,0 +1,13 @@
+equitorch.nn.normalization
+==========================
+
+.. automodule:: equitorch.nn.normalization
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      BatchRMSNorm
+      LayerRMSNorm
+   

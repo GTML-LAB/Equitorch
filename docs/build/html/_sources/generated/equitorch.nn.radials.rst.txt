@@ -1,0 +1,12 @@
+equitorch.nn.radials
+====================
+
+.. automodule:: equitorch.nn.radials
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      BesselBasis
+   

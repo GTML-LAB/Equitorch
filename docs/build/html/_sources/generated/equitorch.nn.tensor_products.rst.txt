@@ -1,0 +1,13 @@
+equitorch.nn.tensor\_products
+=============================
+
+.. automodule:: equitorch.nn.tensor_products
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      TensorDot
+      TensorProduct
+   

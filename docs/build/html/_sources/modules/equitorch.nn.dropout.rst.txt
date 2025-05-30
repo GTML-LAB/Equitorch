@@ -1,0 +1,7 @@
+equitorch.nn.dropout module
+===========================
+
+.. automodule:: equitorch.nn.dropout
+   :members:
+   :show-inheritance:
+   :undoc-members:

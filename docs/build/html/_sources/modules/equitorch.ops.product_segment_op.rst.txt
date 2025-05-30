@@ -1,0 +1,7 @@
+equitorch.ops.product\_segment\_op module
+=========================================
+
+.. automodule:: equitorch.ops.product_segment_op
+   :members:
+   :show-inheritance:
+   :undoc-members:

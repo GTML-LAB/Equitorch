@@ -1,0 +1,6 @@
+equitorch.ops.kernel\_dense
+===========================
+
+.. automodule:: equitorch.ops.kernel_dense
+
+   

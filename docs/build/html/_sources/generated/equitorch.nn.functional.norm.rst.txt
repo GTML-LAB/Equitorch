@@ -1,0 +1,6 @@
+equitorch.nn.functional.norm
+============================
+
+.. currentmodule:: equitorch.nn.functional
+
+.. autofunction:: norm

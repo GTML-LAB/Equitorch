@@ -1,0 +1,32 @@
+equitorch.nn.functional.linears
+===============================
+
+.. automodule:: equitorch.nn.functional.linears
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      so3_linear_uu
+      so3_linear_uv
+      tensor_product_1uu
+      tensor_product_1vu
+      tensor_product_u1u
+      tensor_product_u1v
+      tensor_product_uu1
+      tensor_product_vu1
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      IrrepWiseLinear
+      IrrepsLinear
+      TensorProduct1UUDummy
+      TensorProduct1VUDummy
+      TensorProductU1UDummy
+      TensorProductU1VDummy
+      TensorProductUU1Dummy
+      TensorProductVU1Dummy
+   

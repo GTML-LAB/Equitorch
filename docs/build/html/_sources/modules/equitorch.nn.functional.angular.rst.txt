@@ -1,0 +1,7 @@
+equitorch.nn.functional.angular module
+======================================
+
+.. automodule:: equitorch.nn.functional.angular
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>equitorch.nn.functional.wigner_d module &mdash; equitorch  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="equitorch.nn.activations module" href="equitorch.nn.activations.html" />
+    <link rel="prev" title="equitorch.nn.functional.tensor_products module" href="equitorch.nn.functional.tensor_products.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            equitorch
+              <img src="../_static/logo_.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">equitorch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="equitorch.html">equitorch package</a></li>
+          <li class="breadcrumb-item"><a href="equitorch.nn.html">equitorch.nn package</a></li>
+          <li class="breadcrumb-item"><a href="equitorch.nn.functional.html">equitorch.nn.functional package</a></li>
+      <li class="breadcrumb-item active">equitorch.nn.functional.wigner_d module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/equitorch.nn.functional.wigner_d.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-equitorch.nn.functional.wigner_d">
+<span id="equitorch-nn-functional-wigner-d-module"></span><h1>equitorch.nn.functional.wigner_d module<a class="headerlink" href="#module-equitorch.nn.functional.wigner_d" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.nn.functional.wigner_d.sparse_wigner_rotation">
+<span class="sig-prename descclassname"><span class="pre">equitorch.nn.functional.wigner_d.</span></span><span class="sig-name descname"><span class="pre">sparse_wigner_rotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sincos_alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sincos_beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sincos_gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="equitorch.structs.html#equitorch.structs.WignerRotationInfo" title="equitorch.structs.WignerRotationInfo"><span class="pre">WignerRotationInfo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#equitorch.nn.functional.wigner_d.sparse_wigner_rotation" title="Link to this definition"></a></dt>
+<dd><p>Applies sparse Wigner D-matrix rotation <span class="math notranslate nohighlight">\(D(lpha, eta, \gamma) = D_z(lpha)D_y(eta)D_z(\gamma)\)</span>.</p>
+<p>Functional version of <a class="reference internal" href="equitorch.nn.wigner_d.html#equitorch.nn.wigner_d.SparseWignerRotation" title="equitorch.nn.wigner_d.SparseWignerRotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">SparseWignerRotation</span></code></a>.
+See the class for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>torch.Tensor</em>) – Input features.</p></li>
+<li><p><strong>sincos_alpha</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Precomputed sin/cos of Euler angle <span class="math notranslate nohighlight">\(lpha\)</span>.</p></li>
+<li><p><strong>sincos_beta</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Precomputed sin/cos of Euler angle <span class="math notranslate nohighlight">\(eta\)</span>.</p></li>
+<li><p><strong>sincos_gamma</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Precomputed sin/cos of Euler angle <span class="math notranslate nohighlight">\(\gamma\)</span>.</p></li>
+<li><p><strong>info</strong> (<a class="reference internal" href="equitorch.structs.html#equitorch.structs.WignerRotationInfo" title="equitorch.structs.WignerRotationInfo"><em>WignerRotationInfo</em></a>) – Precomputed sparse rotation information.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Rotated features.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.nn.functional.wigner_d.dense_wigner_rotation">
+<span class="sig-prename descclassname"><span class="pre">equitorch.nn.functional.wigner_d.</span></span><span class="sig-name descname"><span class="pre">dense_wigner_rotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wigner_d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.nn.functional.wigner_d.dense_wigner_rotation" title="Link to this definition"></a></dt>
+<dd><p>Applies a precomputed dense Wigner D-matrix to input features.</p>
+<p>Functional version of <a class="reference internal" href="equitorch.nn.wigner_d.html#equitorch.nn.wigner_d.DenseWignerRotation" title="equitorch.nn.wigner_d.DenseWignerRotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">DenseWignerRotation</span></code></a>.
+See the class for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>torch.Tensor</em>) – Input features of shape <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">irreps.dim,</span> <span class="pre">channels)</span></code>.</p></li>
+<li><p><strong>wigner_d</strong> (<em>torch.Tensor</em>) – Dense Wigner D-matrix of shape <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">irreps.dim,</span> <span class="pre">irreps.dim)</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Rotated features.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.nn.functional.wigner_d.wigner_d_matrix">
+<span class="sig-prename descclassname"><span class="pre">equitorch.nn.functional.wigner_d.</span></span><span class="sig-name descname"><span class="pre">wigner_d_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eye</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sincos_alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sincos_beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sincos_gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="equitorch.structs.html#equitorch.structs.WignerRotationInfo" title="equitorch.structs.WignerRotationInfo"><span class="pre">WignerRotationInfo</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#equitorch.nn.functional.wigner_d.wigner_d_matrix" title="Link to this definition"></a></dt>
+<dd><p>Computes the dense Wigner D-matrix by applying sparse rotation operations
+to a provided identity matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eye</strong> (<em>Tensor</em>) – Identity matrix of shape (dim, dim). Device and dtype are inferred.</p></li>
+<li><p><strong>alpha</strong> (<em>Optional</em><em>[</em><em>Tensor</em><em>]</em>) – Alpha Euler angle.</p></li>
+<li><p><strong>beta</strong> (<em>Optional</em><em>[</em><em>Tensor</em><em>]</em>) – Beta Euler angle.</p></li>
+<li><p><strong>gamma</strong> (<em>Optional</em><em>[</em><em>Tensor</em><em>]</em>) – Gamma Euler angle.</p></li>
+<li><p><strong>sincos_alpha</strong> (<em>Optional</em><em>[</em><em>Tensor</em><em>]</em>) – Precomputed sin/cos for alpha angle.</p></li>
+<li><p><strong>sincos_beta</strong> (<em>Optional</em><em>[</em><em>Tensor</em><em>]</em>) – Precomputed sin/cos for beta angle.</p></li>
+<li><p><strong>sincos_gamma</strong> (<em>Optional</em><em>[</em><em>Tensor</em><em>]</em>) – Precomputed sin/cos for gamma angle.</p></li>
+<li><p><strong>info</strong> (<a class="reference internal" href="equitorch.structs.html#equitorch.structs.WignerRotationInfo" title="equitorch.structs.WignerRotationInfo"><em>WignerRotationInfo</em></a>) – Precomputed sparse rotation info.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The dense Wigner D-matrix of shape (batch, dim, dim)</dt><dd><p>or (dim, dim) if angles are not batched.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.nn.functional.wigner_d.align_to_z_wigner_d">
+<span class="sig-prename descclassname"><span class="pre">equitorch.nn.functional.wigner_d.</span></span><span class="sig-name descname"><span class="pre">align_to_z_wigner_d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eye</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyz</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="equitorch.structs.html#equitorch.structs.WignerRotationInfo" title="equitorch.structs.WignerRotationInfo"><span class="pre">WignerRotationInfo</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalized</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-14</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#equitorch.nn.functional.wigner_d.align_to_z_wigner_d" title="Link to this definition"></a></dt>
+<dd><p>Computes Wigner D-matrix <span class="math notranslate nohighlight">\(D(R_{align})\)</span> that rotates vector <span class="math notranslate nohighlight">\(\vec{v}\)</span> to z-axis.</p>
+<p>Functional version of <a class="reference internal" href="equitorch.nn.wigner_d.html#equitorch.nn.wigner_d.AlignToZWignerD" title="equitorch.nn.wigner_d.AlignToZWignerD"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlignToZWignerD</span></code></a>.</p>
+<p>See the class for more details.</p>
+<p>The rotation <span class="math notranslate nohighlight">\(R_{align}\)</span> is <span class="math notranslate nohighlight">\((0, -\theta, -\phi)\)</span> where <span class="math notranslate nohighlight">\(\theta, \phi\)</span> are polar and azimuthal angles of <span class="math notranslate nohighlight">\(\vec{v}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eye</strong> (<em>torch.Tensor</em>) – Identity matrix of shape <code class="docutils literal notranslate"><span class="pre">(dim,</span> <span class="pre">dim)</span></code>.</p></li>
+<li><p><strong>xyz</strong> (<em>torch.Tensor</em>) – Input Cartesian coordinates, shape <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">3)</span></code>.</p></li>
+<li><p><strong>max_m</strong> (<em>int</em>) – Maximum m value for sincos calculation, derived from irreps.</p></li>
+<li><p><strong>info</strong> (<a class="reference internal" href="equitorch.structs.html#equitorch.structs.WignerRotationInfo" title="equitorch.structs.WignerRotationInfo"><em>WignerRotationInfo</em></a>) – Precomputed sparse rotation info for the irreps.</p></li>
+<li><p><strong>normalized</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether <code class="docutils literal notranslate"><span class="pre">xyz</span></code> is already normalized. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>eps</strong> (<em>float</em><em>, </em><em>optional</em>) – Epsilon for numerical stability. Defaults to <code class="docutils literal notranslate"><span class="pre">1e-14</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dense Wigner D-matrix for alignment, shape <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">dim,</span> <span class="pre">dim)</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="equitorch.nn.functional.tensor_products.html" class="btn btn-neutral float-left" title="equitorch.nn.functional.tensor_products module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="equitorch.nn.activations.html" class="btn btn-neutral float-right" title="equitorch.nn.activations module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tong Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

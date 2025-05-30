@@ -1,0 +1,117 @@
+equitorch.nn.functional package
+===============================
+
+Submodules
+----------
+
+equitorch.nn.functional.activations module
+------------------------------------------
+
+.. automodule:: equitorch.nn.functional.activations
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.angular module
+--------------------------------------
+
+.. automodule:: equitorch.nn.functional.angular
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.cutoffs module
+--------------------------------------
+
+.. automodule:: equitorch.nn.functional.cutoffs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.dropout module
+--------------------------------------
+
+.. automodule:: equitorch.nn.functional.dropout
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.linears module
+--------------------------------------
+
+.. automodule:: equitorch.nn.functional.linears
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.norm module
+-----------------------------------
+
+.. automodule:: equitorch.nn.functional.norm
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.normalization module
+--------------------------------------------
+
+.. automodule:: equitorch.nn.functional.normalization
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.rotations module
+----------------------------------------
+
+.. automodule:: equitorch.nn.functional.rotations
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.sparse\_product module
+----------------------------------------------
+
+.. automodule:: equitorch.nn.functional.sparse_product
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.sparse\_scale module
+--------------------------------------------
+
+.. automodule:: equitorch.nn.functional.sparse_scale
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.sphericals module
+-----------------------------------------
+
+.. automodule:: equitorch.nn.functional.sphericals
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.tensor\_products module
+-----------------------------------------------
+
+.. automodule:: equitorch.nn.functional.tensor_products
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+equitorch.nn.functional.wigner\_d module
+----------------------------------------
+
+.. automodule:: equitorch.nn.functional.wigner_d
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: equitorch.nn.functional
+   :members:
+   :show-inheritance:
+   :undoc-members:

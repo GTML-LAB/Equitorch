@@ -1,0 +1,644 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>equitorch.structs &mdash; equitorch  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="equitorch.transforms" href="transforms.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="ops.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            equitorch
+              <img src="../_static/logo_.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="constants.html">equitorch.constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="irreps.html">equitorch.irreps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nn.html">equitorch.nn</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">equitorch.structs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.structs.add_operation_methods"><code class="docutils literal notranslate"><span class="pre">add_operation_methods()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.structs.SparseScaleInfo"><code class="docutils literal notranslate"><span class="pre">SparseScaleInfo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseScaleInfo.scale"><code class="docutils literal notranslate"><span class="pre">SparseScaleInfo.scale</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseScaleInfo.index"><code class="docutils literal notranslate"><span class="pre">SparseScaleInfo.index</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseScaleInfo.seg_out"><code class="docutils literal notranslate"><span class="pre">SparseScaleInfo.seg_out</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseScaleInfo.index_out"><code class="docutils literal notranslate"><span class="pre">SparseScaleInfo.index_out</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseScaleInfo.out_size"><code class="docutils literal notranslate"><span class="pre">SparseScaleInfo.out_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseScaleInfo.cpu"><code class="docutils literal notranslate"><span class="pre">SparseScaleInfo.cpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseScaleInfo.cuda"><code class="docutils literal notranslate"><span class="pre">SparseScaleInfo.cuda()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseScaleInfo.to"><code class="docutils literal notranslate"><span class="pre">SparseScaleInfo.to()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.structs.SparseProductInfo"><code class="docutils literal notranslate"><span class="pre">SparseProductInfo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseProductInfo.scale"><code class="docutils literal notranslate"><span class="pre">SparseProductInfo.scale</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseProductInfo.index1"><code class="docutils literal notranslate"><span class="pre">SparseProductInfo.index1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseProductInfo.index2"><code class="docutils literal notranslate"><span class="pre">SparseProductInfo.index2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseProductInfo.seg_out"><code class="docutils literal notranslate"><span class="pre">SparseProductInfo.seg_out</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseProductInfo.gather_index"><code class="docutils literal notranslate"><span class="pre">SparseProductInfo.gather_index</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseProductInfo.index_out"><code class="docutils literal notranslate"><span class="pre">SparseProductInfo.index_out</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseProductInfo.out_size"><code class="docutils literal notranslate"><span class="pre">SparseProductInfo.out_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseProductInfo.cpu"><code class="docutils literal notranslate"><span class="pre">SparseProductInfo.cpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseProductInfo.cuda"><code class="docutils literal notranslate"><span class="pre">SparseProductInfo.cuda()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.SparseProductInfo.to"><code class="docutils literal notranslate"><span class="pre">SparseProductInfo.to()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.structs.TensorProductInfo"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_Mij_fwd"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_Mij_fwd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_Mij_bwd1"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_Mij_bwd1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_Mij_bwd2"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_Mij_bwd2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_M_fwd"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_M_fwd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_M_bwd1"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_M_bwd1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_M_bwd2"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_M_bwd2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_kM1j_fwd"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_kM1j_fwd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_kM1j_bwd1"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_kM1j_bwd1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_kM1j_bwd2"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_kM1j_bwd2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_kM1M2_fwd"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_kM1M2_fwd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_kM1M2_bwd1"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_kM1M2_bwd1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_kM1M2_bwd2"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_kM1M2_bwd2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_M_kM1M2_fwd"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_M_kM1M2_fwd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.info_M_kM1M2_bwd"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.info_M_kM1M2_bwd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.out_size"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.out_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.cpu"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.cpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.cuda"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.cuda()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.TensorProductInfo.to"><code class="docutils literal notranslate"><span class="pre">TensorProductInfo.to()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.structs.IrrepsInfo"><code class="docutils literal notranslate"><span class="pre">IrrepsInfo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsInfo.rsqrt_dims"><code class="docutils literal notranslate"><span class="pre">IrrepsInfo.rsqrt_dims</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsInfo.rdims"><code class="docutils literal notranslate"><span class="pre">IrrepsInfo.rdims</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsInfo.irrep_index"><code class="docutils literal notranslate"><span class="pre">IrrepsInfo.irrep_index</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsInfo.irrep_seg"><code class="docutils literal notranslate"><span class="pre">IrrepsInfo.irrep_seg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsInfo.num_irreps"><code class="docutils literal notranslate"><span class="pre">IrrepsInfo.num_irreps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsInfo.cpu"><code class="docutils literal notranslate"><span class="pre">IrrepsInfo.cpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsInfo.cuda"><code class="docutils literal notranslate"><span class="pre">IrrepsInfo.cuda()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsInfo.to"><code class="docutils literal notranslate"><span class="pre">IrrepsInfo.to()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.scale_MM0"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.scale_MM0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.M_seg_MM0"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.M_seg_MM0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.ii0_MM0"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.ii0_MM0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.M0_MM0"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.M0_MM0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.M_MM0"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.M_MM0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.M_out"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.M_out</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.ii0_seg_ii0MM0"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.ii0_seg_ii0MM0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.M_ii0MM0"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.M_ii0MM0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.M0_ii0MM0"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.M0_ii0MM0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.scales_ii0"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.scales_ii0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.out_size"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.out_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.cpu"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.cpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.cuda"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.cuda()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.IrrepsLinearInfo.to"><code class="docutils literal notranslate"><span class="pre">IrrepsLinearInfo.to()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#equitorch.structs.WignerRotationInfo"><code class="docutils literal notranslate"><span class="pre">WignerRotationInfo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.WignerRotationInfo.j_matrix_info"><code class="docutils literal notranslate"><span class="pre">WignerRotationInfo.j_matrix_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.WignerRotationInfo.rotate_z_info_fwd"><code class="docutils literal notranslate"><span class="pre">WignerRotationInfo.rotate_z_info_fwd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.WignerRotationInfo.rotate_z_info_bwd_input"><code class="docutils literal notranslate"><span class="pre">WignerRotationInfo.rotate_z_info_bwd_input</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.WignerRotationInfo.rotate_z_info_bwd_cs"><code class="docutils literal notranslate"><span class="pre">WignerRotationInfo.rotate_z_info_bwd_cs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.WignerRotationInfo.sign"><code class="docutils literal notranslate"><span class="pre">WignerRotationInfo.sign</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.WignerRotationInfo.max_m"><code class="docutils literal notranslate"><span class="pre">WignerRotationInfo.max_m</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.WignerRotationInfo.cpu"><code class="docutils literal notranslate"><span class="pre">WignerRotationInfo.cpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.WignerRotationInfo.cuda"><code class="docutils literal notranslate"><span class="pre">WignerRotationInfo.cuda()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equitorch.structs.WignerRotationInfo.to"><code class="docutils literal notranslate"><span class="pre">WignerRotationInfo.to()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transforms.html">equitorch.transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">equitorch.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.irreps.html">equitorch.irreps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.nn.html">equitorch.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.transforms.html">equitorch.transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.constants.html">equitorch.constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/equitorch.utils.html">equitorch.utils</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">equitorch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+      <li class="breadcrumb-item active">equitorch.structs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/structs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-equitorch.structs">
+<span id="equitorch-structs"></span><h1>equitorch.structs<a class="headerlink" href="#module-equitorch.structs" title="Link to this heading"></a></h1>
+<p>Defines specialized data structures (NamedTuples) for managing sparse operations and tensor product information.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="equitorch.structs.add_operation_methods">
+<span class="sig-prename descclassname"><span class="pre">equitorch.structs.</span></span><span class="sig-name descname"><span class="pre">add_operation_methods</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.add_operation_methods" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.structs.SparseScaleInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.structs.</span></span><span class="sig-name descname"><span class="pre">SparseScaleInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seg_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.SparseScaleInfo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<p>z_M = sum_{t in Ind*[M]} s_t * x_Ind’[t]</p>
+<p>or</p>
+<p>z_M = sum_{M’} s_{MM’} x_M’</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseScaleInfo.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseScaleInfo.scale" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseScaleInfo.index">
+<span class="sig-name descname"><span class="pre">index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseScaleInfo.index" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseScaleInfo.seg_out">
+<span class="sig-name descname"><span class="pre">seg_out</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseScaleInfo.seg_out" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseScaleInfo.index_out">
+<span class="sig-name descname"><span class="pre">index_out</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseScaleInfo.index_out" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseScaleInfo.out_size">
+<span class="sig-name descname"><span class="pre">out_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseScaleInfo.out_size" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.SparseScaleInfo.cpu">
+<span class="sig-name descname"><span class="pre">cpu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.SparseScaleInfo.cpu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.SparseScaleInfo.cuda">
+<span class="sig-name descname"><span class="pre">cuda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.SparseScaleInfo.cuda" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.SparseScaleInfo.to">
+<span class="sig-name descname"><span class="pre">to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.SparseScaleInfo.to" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.structs.SparseProductInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.structs.</span></span><span class="sig-name descname"><span class="pre">SparseProductInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seg_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gather_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.SparseProductInfo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<p>z_M = sum_{t in Ind*[M]} s_t * x_Ind1[t] * y_Ind2[t]</p>
+<p>or</p>
+<p>z_M = sum_{M1M2} s_{MM1M2} x_M1 * y_M2</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseProductInfo.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseProductInfo.scale" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseProductInfo.index1">
+<span class="sig-name descname"><span class="pre">index1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseProductInfo.index1" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseProductInfo.index2">
+<span class="sig-name descname"><span class="pre">index2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseProductInfo.index2" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseProductInfo.seg_out">
+<span class="sig-name descname"><span class="pre">seg_out</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseProductInfo.seg_out" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseProductInfo.gather_index">
+<span class="sig-name descname"><span class="pre">gather_index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseProductInfo.gather_index" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseProductInfo.index_out">
+<span class="sig-name descname"><span class="pre">index_out</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseProductInfo.index_out" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.SparseProductInfo.out_size">
+<span class="sig-name descname"><span class="pre">out_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.SparseProductInfo.out_size" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 6</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.SparseProductInfo.cpu">
+<span class="sig-name descname"><span class="pre">cpu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.SparseProductInfo.cpu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.SparseProductInfo.cuda">
+<span class="sig-name descname"><span class="pre">cuda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.SparseProductInfo.cuda" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.SparseProductInfo.to">
+<span class="sig-name descname"><span class="pre">to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.SparseProductInfo.to" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.structs.</span></span><span class="sig-name descname"><span class="pre">TensorProductInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info_Mij_fwd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_Mij_bwd1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_Mij_bwd2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_M_fwd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_M_bwd1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_M_bwd2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_kM1j_fwd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_kM1j_bwd1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_kM1j_bwd2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_kM1M2_fwd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_kM1M2_bwd1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_kM1M2_bwd2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_M_kM1M2_fwd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_M_kM1M2_bwd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.TensorProductInfo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_Mij_fwd">
+<span class="sig-name descname"><span class="pre">info_Mij_fwd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_Mij_fwd" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_Mij_bwd1">
+<span class="sig-name descname"><span class="pre">info_Mij_bwd1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_Mij_bwd1" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_Mij_bwd2">
+<span class="sig-name descname"><span class="pre">info_Mij_bwd2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_Mij_bwd2" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_M_fwd">
+<span class="sig-name descname"><span class="pre">info_M_fwd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_M_fwd" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_M_bwd1">
+<span class="sig-name descname"><span class="pre">info_M_bwd1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_M_bwd1" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_M_bwd2">
+<span class="sig-name descname"><span class="pre">info_M_bwd2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_M_bwd2" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_kM1j_fwd">
+<span class="sig-name descname"><span class="pre">info_kM1j_fwd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_kM1j_fwd" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 6</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_kM1j_bwd1">
+<span class="sig-name descname"><span class="pre">info_kM1j_bwd1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_kM1j_bwd1" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 7</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_kM1j_bwd2">
+<span class="sig-name descname"><span class="pre">info_kM1j_bwd2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_kM1j_bwd2" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 8</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_kM1M2_fwd">
+<span class="sig-name descname"><span class="pre">info_kM1M2_fwd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_kM1M2_fwd" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 9</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_kM1M2_bwd1">
+<span class="sig-name descname"><span class="pre">info_kM1M2_bwd1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_kM1M2_bwd1" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 10</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_kM1M2_bwd2">
+<span class="sig-name descname"><span class="pre">info_kM1M2_bwd2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_kM1M2_bwd2" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 11</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_M_kM1M2_fwd">
+<span class="sig-name descname"><span class="pre">info_M_kM1M2_fwd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseScaleInfo" title="equitorch.structs.SparseScaleInfo"><span class="pre">SparseScaleInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_M_kM1M2_fwd" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 12</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.info_M_kM1M2_bwd">
+<span class="sig-name descname"><span class="pre">info_M_kM1M2_bwd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseScaleInfo" title="equitorch.structs.SparseScaleInfo"><span class="pre">SparseScaleInfo</span></a></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.info_M_kM1M2_bwd" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 13</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.out_size">
+<span class="sig-name descname"><span class="pre">out_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#equitorch.structs.TensorProductInfo.out_size" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 14</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.cpu">
+<span class="sig-name descname"><span class="pre">cpu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.TensorProductInfo.cpu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.cuda">
+<span class="sig-name descname"><span class="pre">cuda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.TensorProductInfo.cuda" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.TensorProductInfo.to">
+<span class="sig-name descname"><span class="pre">to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.TensorProductInfo.to" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.structs.</span></span><span class="sig-name descname"><span class="pre">IrrepsInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rsqrt_dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rdims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">irrep_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">irrep_seg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_irreps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.IrrepsInfo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsInfo.rsqrt_dims">
+<span class="sig-name descname"><span class="pre">rsqrt_dims</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsInfo.rsqrt_dims" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsInfo.rdims">
+<span class="sig-name descname"><span class="pre">rdims</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsInfo.rdims" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsInfo.irrep_index">
+<span class="sig-name descname"><span class="pre">irrep_index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsInfo.irrep_index" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsInfo.irrep_seg">
+<span class="sig-name descname"><span class="pre">irrep_seg</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsInfo.irrep_seg" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsInfo.num_irreps">
+<span class="sig-name descname"><span class="pre">num_irreps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#equitorch.structs.IrrepsInfo.num_irreps" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsInfo.cpu">
+<span class="sig-name descname"><span class="pre">cpu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.IrrepsInfo.cpu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsInfo.cuda">
+<span class="sig-name descname"><span class="pre">cuda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.IrrepsInfo.cuda" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsInfo.to">
+<span class="sig-name descname"><span class="pre">to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.IrrepsInfo.to" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.structs.</span></span><span class="sig-name descname"><span class="pre">IrrepsLinearInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale_MM0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M_seg_MM0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ii0_MM0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M0_MM0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M_MM0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ii0_seg_ii0MM0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M_ii0MM0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M0_ii0MM0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scales_ii0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.scale_MM0">
+<span class="sig-name descname"><span class="pre">scale_MM0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.scale_MM0" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.M_seg_MM0">
+<span class="sig-name descname"><span class="pre">M_seg_MM0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.M_seg_MM0" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.ii0_MM0">
+<span class="sig-name descname"><span class="pre">ii0_MM0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.ii0_MM0" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.M0_MM0">
+<span class="sig-name descname"><span class="pre">M0_MM0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.M0_MM0" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.M_MM0">
+<span class="sig-name descname"><span class="pre">M_MM0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.M_MM0" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.M_out">
+<span class="sig-name descname"><span class="pre">M_out</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.M_out" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.ii0_seg_ii0MM0">
+<span class="sig-name descname"><span class="pre">ii0_seg_ii0MM0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.ii0_seg_ii0MM0" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 6</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.M_ii0MM0">
+<span class="sig-name descname"><span class="pre">M_ii0MM0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.M_ii0MM0" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 7</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.M0_ii0MM0">
+<span class="sig-name descname"><span class="pre">M0_ii0MM0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.M0_ii0MM0" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 8</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.scales_ii0">
+<span class="sig-name descname"><span class="pre">scales_ii0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span></em><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.scales_ii0" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 9</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.out_size">
+<span class="sig-name descname"><span class="pre">out_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.out_size" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 10</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.cpu">
+<span class="sig-name descname"><span class="pre">cpu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.cpu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.cuda">
+<span class="sig-name descname"><span class="pre">cuda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.cuda" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.IrrepsLinearInfo.to">
+<span class="sig-name descname"><span class="pre">to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.IrrepsLinearInfo.to" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="equitorch.structs.WignerRotationInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">equitorch.structs.</span></span><span class="sig-name descname"><span class="pre">WignerRotationInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">j_matrix_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate_z_info_fwd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate_z_info_bwd_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate_z_info_bwd_cs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.WignerRotationInfo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.WignerRotationInfo.j_matrix_info">
+<span class="sig-name descname"><span class="pre">j_matrix_info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseScaleInfo" title="equitorch.structs.SparseScaleInfo"><span class="pre">SparseScaleInfo</span></a></em><a class="headerlink" href="#equitorch.structs.WignerRotationInfo.j_matrix_info" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.WignerRotationInfo.rotate_z_info_fwd">
+<span class="sig-name descname"><span class="pre">rotate_z_info_fwd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a></em><a class="headerlink" href="#equitorch.structs.WignerRotationInfo.rotate_z_info_fwd" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.WignerRotationInfo.rotate_z_info_bwd_input">
+<span class="sig-name descname"><span class="pre">rotate_z_info_bwd_input</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.WignerRotationInfo.rotate_z_info_bwd_input" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.WignerRotationInfo.rotate_z_info_bwd_cs">
+<span class="sig-name descname"><span class="pre">rotate_z_info_bwd_cs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#equitorch.structs.SparseProductInfo" title="equitorch.structs.SparseProductInfo"><span class="pre">SparseProductInfo</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.WignerRotationInfo.rotate_z_info_bwd_cs" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.WignerRotationInfo.sign">
+<span class="sig-name descname"><span class="pre">sign</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.WignerRotationInfo.sign" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="equitorch.structs.WignerRotationInfo.max_m">
+<span class="sig-name descname"><span class="pre">max_m</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#equitorch.structs.WignerRotationInfo.max_m" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.WignerRotationInfo.cpu">
+<span class="sig-name descname"><span class="pre">cpu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.WignerRotationInfo.cpu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.WignerRotationInfo.cuda">
+<span class="sig-name descname"><span class="pre">cuda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.WignerRotationInfo.cuda" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="equitorch.structs.WignerRotationInfo.to">
+<span class="sig-name descname"><span class="pre">to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#equitorch.structs.WignerRotationInfo.to" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ops.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="transforms.html" class="btn btn-neutral float-right" title="equitorch.transforms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tong Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

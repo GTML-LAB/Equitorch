@@ -1,0 +1,15 @@
+equitorch.nn.functional.wigner\_d
+=================================
+
+.. automodule:: equitorch.nn.functional.wigner_d
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      align_to_z_wigner_d
+      dense_wigner_rotation
+      sparse_wigner_rotation
+      wigner_d_matrix
+   

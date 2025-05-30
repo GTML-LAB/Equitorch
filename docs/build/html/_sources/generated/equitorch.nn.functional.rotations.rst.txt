@@ -1,0 +1,12 @@
+equitorch.nn.functional.rotations
+=================================
+
+.. automodule:: equitorch.nn.functional.rotations
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      angles_to_matrix
+   

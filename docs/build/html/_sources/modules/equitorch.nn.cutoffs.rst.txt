@@ -1,0 +1,7 @@
+equitorch.nn.cutoffs module
+===========================
+
+.. automodule:: equitorch.nn.cutoffs
+   :members:
+   :show-inheritance:
+   :undoc-members:

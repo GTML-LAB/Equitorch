@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>equitorch.nn.functional &mdash; equitorch  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="equitorch.transforms" href="equitorch.transforms.html" />
+    <link rel="prev" title="equitorch.nn" href="equitorch.nn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            equitorch
+              <img src="../_static/logo_.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../modules/constants.html">equitorch.constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/irreps.html">equitorch.irreps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/nn.html">equitorch.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/structs.html">equitorch.structs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/transforms.html">equitorch.transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/utils.html">equitorch.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equitorch.irreps.html">equitorch.irreps</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="equitorch.nn.html">equitorch.nn</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">equitorch.nn.functional</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="equitorch.transforms.html">equitorch.transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equitorch.constants.html">equitorch.constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equitorch.utils.html">equitorch.utils</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">equitorch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="equitorch.nn.html">equitorch.nn</a></li>
+      <li class="breadcrumb-item active">equitorch.nn.functional</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/equitorch.nn.functional.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-equitorch.nn.functional">
+<span id="equitorch-nn-functional"></span><h1>equitorch.nn.functional<a class="headerlink" href="#module-equitorch.nn.functional" title="Link to this heading"></a></h1>
+<p>Provides functional implementations of equivariant neural network operations.</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_product_u1u</span></code>(input1, input2, weight, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">so3_linear_uu</span></code>(input1, input2, weight, ...[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_product_1uu</span></code>(input1, input2, weight, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_product_uu1</span></code>(input1, input2, weight, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_product_u1v</span></code>(input1, input2, weight, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">so3_linear_uv</span></code>(input1, input2, weight, ...[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_product_1vu</span></code>(input1, input2, weight, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_product_vu1</span></code>(input1, input2, weight, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">irrep_wise_linear</span></code>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">irreps_linear</span></code>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">so2_linear_uu</span></code>(input1, input2, info_fwd[, ...])</p></td>
+<td><p>Computes sparse element-wise multiplication using indexed operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">so2_linear_uv</span></code>(input1, input2, info_fwd[, ...])</p></td>
+<td><p>Computes sparse vector-matrix multiplication using indexed operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">spherical_harmonics</span></code>(input, l_max[, dim, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">xyz_to_spherical</span></code>(xyz[, normalize_input, ...])</p></td>
+<td><p>Computes spherical coordinates (r, theta, phi) from Cartesian coordinates (x, y, z).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">spherical_to_xyz</span></code>(theta, phi[, r, dim])</p></td>
+<td><p>Computes Cartesian coordinates (x, y, z) from spherical coordinates (theta, phi, r).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">xyz_to_sincos</span></code>(xyz, max_m[, normalize_input, ...])</p></td>
+<td><p>Computes the sin/cos embedding of the azimuthal angle (phi) derived from Cartesian coordinates (x, y, z).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">batch_rms_norm</span></code>(input, running_squared_norm, ...)</p></td>
+<td><p>Applies Batch RMS Normalization for equivariant features.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">layer_rms_norm</span></code>(input_tensor, irreps_info[, ...])</p></td>
+<td><p>Applies Layer Root Mean Square Normalization for equivariant features.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse_scale</span></code>(input, info_fwd[, info_bwd])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_product_uuu</span></code>(input1, input2, weight, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_product_uvw</span></code>(input1, input2, weight, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_dot_uu</span></code>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_dot_uv</span></code>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse_mul</span></code>(input1, input2, info_fwd[, ...])</p></td>
+<td><p>Computes sparse element-wise multiplication using indexed operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse_outer</span></code>(input1, input2, info_fwd[, ...])</p></td>
+<td><p>Computes sparse outer product using indexed operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse_inner</span></code>(input1, input2, info_fwd[, ...])</p></td>
+<td><p>Computes sparse inner product using indexed operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse_vecmat</span></code>(input1, input2, info_fwd[, ...])</p></td>
+<td><p>Computes sparse vector-matrix multiplication using indexed operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse_vecsca</span></code>(input1, input2, info_fwd[, ...])</p></td>
+<td><p>Computes sparse vector-scalar multiplication using indexed operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse_scavec</span></code>(input1, input2, info_fwd[, ...])</p></td>
+<td><p>Computes sparse scalar-vector multiplication using indexed operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse_mat_t_vec</span></code>(input1, input2, info_fwd[, ...])</p></td>
+<td><p>Computes sparse matrix-transposed-vector multiplication using indexed operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse_wigner_rotation</span></code>(input, sincos_alpha, ...)</p></td>
+<td><p>Applies sparse Wigner D-matrix rotation <span class="math notranslate nohighlight">\(D(lpha, eta, \gamma) = D_z(lpha)D_y(eta)D_z(\gamma)\)</span>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dense_wigner_rotation</span></code>(input, wigner_d)</p></td>
+<td><p>Applies a precomputed dense Wigner D-matrix to input features.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">wigner_d_matrix</span></code>(eye[, alpha, beta, gamma, ...])</p></td>
+<td><p>Computes the dense Wigner D-matrix by applying sparse rotation operations to a provided identity matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">align_to_z_wigner_d</span></code>(eye, xyz, max_m, info[, ...])</p></td>
+<td><p>Computes Wigner D-matrix <span class="math notranslate nohighlight">\(D(R_{align})\)</span> that rotates vector <span class="math notranslate nohighlight">\(\vec{v}\)</span> to z-axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gating</span></code>(input, gates, irreps_info)</p></td>
+<td><p>Equivariant gating mechanism.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sincos</span></code>(angle, max_m[, with_ones, ...])</p></td>
+<td><p>Prepares the sin/cos tensor for z-rotation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">squared_norm</span></code>(input_tensor, irreps_info[, scaled])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code>(input_tensor, irreps_info[, scaled])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">channel_mean_squared_norm</span></code>(input_tensor, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">batch_mean_squared_norm</span></code>(input_tensor, ...[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">irrep_wise_dropout</span></code>(input, p, training, ...)</p></td>
+<td><p>Apply dropout irrep-wise to an input tensor.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">angles_to_matrix</span></code>([alpha, beta, gamma])</p></td>
+<td><p>Convert Euler angles (ZYZ convention) to rotation matrices.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="equitorch.nn.html" class="btn btn-neutral float-left" title="equitorch.nn" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="equitorch.transforms.html" class="btn btn-neutral float-right" title="equitorch.transforms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tong Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

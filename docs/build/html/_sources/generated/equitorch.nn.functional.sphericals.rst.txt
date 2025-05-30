@@ -1,0 +1,15 @@
+equitorch.nn.functional.sphericals
+==================================
+
+.. automodule:: equitorch.nn.functional.sphericals
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      spherical_harmonics
+      spherical_to_xyz
+      xyz_to_sincos
+      xyz_to_spherical
+   

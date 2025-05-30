@@ -1,0 +1,28 @@
+equitorch.ops.batched\_sparse\_dense\_op
+========================================
+
+.. automodule:: equitorch.ops.batched_sparse_dense_op
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      indexed_inner_scale_gather
+      indexed_inner_scale_gather_cpu
+      indexed_inner_scale_gather_gpu
+      indexed_mat_t_vec_scale_gather
+      indexed_mul_scale_gather
+      indexed_mul_scale_gather_cpu
+      indexed_mul_scale_gather_gpu
+      indexed_outer_scale_gather
+      indexed_outer_scale_gather_cpu
+      indexed_outer_scale_gather_gpu
+      indexed_scavec_scale_gather
+      indexed_vecmat_scale_gather
+      indexed_vecmat_scale_gather_cpu
+      indexed_vecmat_scale_gather_gpu
+      indexed_vecsca_scale_gather
+      indexed_vecsca_scale_gather_cpu
+      indexed_vecsca_scale_gather_gpu
+   

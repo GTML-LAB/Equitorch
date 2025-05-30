@@ -1,0 +1,13 @@
+﻿equitorch.constants
+===================
+
+.. automodule:: equitorch.constants
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      j_matrix
+      so3_clebsch_gordan
+   
