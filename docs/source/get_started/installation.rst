@@ -7,5 +7,5 @@ With these packages installed, you can install *Equitorch* by
 
 .. code-block:: bash
 
-    pip install equitorch
+    pip install git+https://github.com/GTML-LAB/Equitorch.git
 
