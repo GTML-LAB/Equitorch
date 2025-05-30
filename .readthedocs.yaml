@@ -6,4 +6,4 @@ build:
   tools:
     python: "miniconda3-3.12-24.1"
 conda:
-  environment: "./docs/environment.ymal"
+  environment: "./docs/environment.yaml"
