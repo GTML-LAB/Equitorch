@@ -30,7 +30,7 @@ dependencies:
       - networkx==3.3
       - numpy==2.2.6
       - psutil==7.0.0
-      - pyg-lib==pt24cu124
+      - pyg-lib
       - pyparsing==3.2.3
       - scikit-learn==1.6.1
       - scipy==1.15.3
