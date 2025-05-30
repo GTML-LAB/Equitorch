@@ -36,7 +36,7 @@ dependencies:
       - scikit-learn==1.6.1
       - scipy==1.15.3
       - sympy==1.13.3
-      - -index-url https://download.pytorch.org/whl/cu124
+      - --index-url https://download.pytorch.org/whl/cu124
       - torch==2.4.0
       - -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
       - torch-cluster
