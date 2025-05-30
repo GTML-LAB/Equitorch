@@ -168,7 +168,7 @@ dependencies:
       - debugpy==1.8.12
       - decorator==5.1.1
       - docutils==0.21.2
-      - e3nn==0.5.4
+      - e3nn==0.5.3
       - executing==2.2.0
       - fastjsonschema==2.21.1
       - filelock==3.17.0
