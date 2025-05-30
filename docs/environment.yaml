@@ -1,56 +1,199 @@
-name: eqt_mini
+name: equitorch
 channels:
+  - pytorch
+  - nvidia
+  - conda-forge
   - defaults
-  - https://repo.anaconda.com/pkgs/main
-  - https://repo.anaconda.com/pkgs/r
 dependencies:
   - _libgcc_mutex=0.1=main
   - _openmp_mutex=5.1=1_gnu
+  - asttokens=2.4.1=pyhd8ed1ab_0
+  - blas=1.0=mkl
   - bzip2=1.0.8=h5eee18b_6
-  - ca-certificates=2025.2.25=h06a4308_0
-  - expat=2.7.1=h6a678d5_0
-  - ld_impl_linux-64=2.40=h12ee557_0
+  - ca-certificates=2024.8.30=hbcca054_0
+  - comm=0.2.2=pyhd8ed1ab_0
+  - cuda-cudart=12.1.105=0
+  - cuda-cupti=12.1.105=0
+  - cuda-libraries=12.1.0=0
+  - cuda-nvrtc=12.1.105=0
+  - cuda-nvtx=12.1.105=0
+  - cuda-opencl=12.5.39=0
+  - cuda-runtime=12.1.0=0
+  - cuda-version=12.5=3
+  - debugpy=1.6.7=py312h6a678d5_0
+  - decorator=5.1.1=pyhd8ed1ab_0
+  - exceptiongroup=1.2.2=pyhd8ed1ab_0
+  - executing=2.1.0=pyhd8ed1ab_0
+  - expat=2.6.2=h6a678d5_0
+  - filelock=3.13.1=py312h06a4308_0
+  - importlib-metadata=8.5.0=pyha770c72_0
+  - intel-openmp=2023.1.0=hdb19cb5_46306
+  - ipykernel=6.29.5=pyh3099207_0
+  - ipython=8.27.0=pyh707e725_0
+  - jedi=0.19.1=pyhd8ed1ab_0
+  - jinja2=3.1.4=py312h06a4308_0
+  - jupyter_client=8.6.3=pyhd8ed1ab_0
+  - jupyter_core=5.7.2=pyh31011fe_1
+  - ld_impl_linux-64=2.38=h1181459_1
+  - libcublas=12.1.0.26=0
+  - libcufft=11.0.2.4=0
+  - libcufile=1.10.1.7=0
+  - libcurand=10.3.6.82=0
+  - libcusolver=11.4.4.55=0
+  - libcusparse=12.0.2.55=0
   - libffi=3.4.4=h6a678d5_1
   - libgcc-ng=11.2.0=h1234567_1
   - libgomp=11.2.0=h1234567_1
+  - libnpp=12.0.2.50=0
+  - libnvjitlink=12.1.105=0
+  - libnvjpeg=12.1.1.14=0
+  - libsodium=1.0.18=h36c2ea0_1
   - libstdcxx-ng=11.2.0=h1234567_1
   - libuuid=1.41.5=h5eee18b_0
+  - llvm-openmp=14.0.6=h9e868ea_0
+  - markupsafe=2.1.3=py312h5eee18b_0
+  - matplotlib-inline=0.1.7=pyhd8ed1ab_0
+  - mkl=2023.1.0=h213fc3f_46344
+  - mkl-service=2.4.0=py312h5eee18b_1
+  - mkl_fft=1.3.8=py312h5eee18b_0
+  - mkl_random=1.2.4=py312hdb19cb5_0
+  - mpmath=1.3.0=py312h06a4308_0
   - ncurses=6.4=h6a678d5_0
-  - openssl=3.0.16=h5eee18b_0
-  - pip=25.1=pyhc872135_2
-  - python=3.12.0=h996f2a0_0
-  - setuptools=78.1.1=py312h06a4308_0
+  - nest-asyncio=1.6.0=pyhd8ed1ab_0
+  - networkx=3.3=py312h06a4308_0
+  - numpy=1.26.4=py312hc5e2394_0
+  - numpy-base=1.26.4=py312h0da6c21_0
+  - openssl=3.0.15=h5eee18b_0
+  - packaging=24.1=pyhd8ed1ab_0
+  - parso=0.8.4=pyhd8ed1ab_0
+  - pexpect=4.9.0=pyhd8ed1ab_0
+  - pickleshare=0.7.5=py_1003
+  - pip=24.0=py312h06a4308_0
+  - platformdirs=4.3.6=pyhd8ed1ab_0
+  - prompt-toolkit=3.0.47=pyha770c72_0
+  - ptyprocess=0.7.0=pyhd3deb0d_0
+  - pure_eval=0.2.3=pyhd8ed1ab_0
+  - pygments=2.18.0=pyhd8ed1ab_0
+  - python=3.12.4=h5148396_1
+  - pytorch=2.3.1=py3.12_cuda12.1_cudnn8.9.2_0
+  - pytorch-cuda=12.1=ha16c6d3_5
+  - pytorch-mutex=1.0=cuda
+  - pyyaml=6.0.1=py312h5eee18b_0
+  - pyzmq=25.1.2=py312h6a678d5_0
+  - readline=8.2=h5eee18b_0
+  - setuptools=69.5.1=py312h06a4308_0
+  - six=1.16.0=pyh6c4a22f_0
   - sqlite=3.45.3=h5eee18b_0
+  - stack_data=0.6.2=pyhd8ed1ab_0
+  - sympy=1.12=py312h06a4308_0
+  - tbb=2021.8.0=hdb19cb5_0
   - tk=8.6.14=h39e8969_0
-  - tzdata=2025b=h04d1e81_0
-  - wheel=0.45.1=py312h06a4308_0
-  - xz=5.6.4=h5eee18b_1
+  - tornado=6.4.1=py312h5eee18b_0
+  - traitlets=5.14.3=pyhd8ed1ab_0
+  - typing_extensions=4.11.0=py312h06a4308_0
+  - tzdata=2024a=h04d1e81_0
+  - wcwidth=0.2.13=pyhd8ed1ab_0
+  - wheel=0.43.0=py312h06a4308_0
+  - xz=5.4.6=h5eee18b_1
+  - yaml=0.2.5=h7b6447c_0
+  - zeromq=4.3.5=h6a678d5_0
+  - zipp=3.20.2=pyhd8ed1ab_0
   - zlib=1.2.13=h5eee18b_1
   - pip:
-      - -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
-      - pyg-lib
-      - sympy
-      - --index-url https://download.pytorch.org/whl/cu126
-      - torch
-      - -f https://data.pyg.org/whl/torch-2.7.0+cu126.html
-      - torch_cluster
-      - -f https://data.pyg.org/whl/torch-2.7.0+cu126.html
-      - torch_geometric
-      - -f https://data.pyg.org/whl/torch-2.7.0+cu126.html
-      - torch_scatter
-      - -f https://data.pyg.org/whl/torch-2.7.0+cu126.html
-      - torch_sparse
-      - -f https://data.pyg.org/whl/torch-2.7.0+cu126.html
-      - torch_spline_conv 
+      - absl-py==2.1.0
+      - aiohttp==3.9.5
+      - aiosignal==1.3.1
+      - alabaster==0.7.16
+      - antlr4-python3-runtime==4.9.3
+      - anyio==4.6.0
+      - ase==3.23.0
+      - astroid==3.3.4
+      - attrs==23.2.0
+      - babel==2.16.0
+      - certifi==2024.7.4
+      - charset-normalizer==3.3.2
+      - click==8.1.7
+      - colorama==0.4.6
+      - colorlog==6.8.2
+      - contourpy==1.2.1
+      - cycler==0.12.1
+      - dirsync==2.2.5
+      - docutils==0.20.1
+      - e3nn==0.5.1
+      - fasteners==0.19
+      - fonttools==4.53.1
+      - frozenlist==1.4.1
+      - fsspec==2024.6.1
+      - grpcio==1.64.1
+      - h11==0.14.0
+      - h5py==3.11.0
+      - hydra-colorlog==1.2.0
+      - hydra-core==1.3.2
+      - idna==3.7
+      - imagesize==1.4.1
+      - joblib==1.4.2
+      - kiwisolver==1.4.5
+      - lightning-utilities==0.11.5
+      - looseversion==1.3.0
+      - markdown==3.6
+      - markdown-it-py==3.0.0
+      - matplotlib==3.9.1
+      - matscipy==1.0.0
+      - mdurl==0.1.2
+      - multidict==6.0.5
+      - omegaconf==2.3.0
+      - opt-einsum==3.3.0
+      - opt-einsum-fx==0.1.4
+      - pillow==10.4.0
+      - plotly==5.24.1
+      - protobuf==4.25.3
+      - psutil==6.0.0
+      - pyg-lib==0.4.0+pt23cu121 -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
+      - pyparsing==3.1.2
+      - python-dateutil==2.9.0.post0
+      - pytorch-lightning==2.3.3
+      - requests==2.32.3
+      - rich==13.7.1
+      - schnetpack==2.0.4
+      - scikit-learn==1.5.1
+      - scipy==1.14.0
+      - sniffio==1.3.1
+      - snowballstemmer==2.2.0
+      - sphinx==7.4.7
+      - sphinx-autoapi==3.3.2
+      - sphinx-autobuild==2024.9.19
+      - sphinx-rtd-theme==2.0.0
+      - sphinxcontrib-applehelp==2.0.0
+      - sphinxcontrib-devhelp==2.0.0
+      - sphinxcontrib-htmlhelp==2.1.0
+      - sphinxcontrib-jquery==4.1
+      - sphinxcontrib-jsmath==1.0.1
+      - sphinxcontrib-qthelp==2.0.0
+      - sphinxcontrib-serializinghtml==2.0.0
+      - starlette==0.39.0
+      - tenacity==9.0.0
+      - tensorboard==2.17.0
+      - tensorboard-data-server==0.7.2
+      - threadpoolctl==3.5.0
+      - -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
+      - torch-cluster==1.6.3+pt23cu121 
+      - torch-ema==0.3
+      - -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
+      - torch-geometric==2.5.3 
+      - torch-harmonics==0.6.5
+      - -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
+      - torch-scatter==2.1.2+pt23cu121 
+      - -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
+      - torch-sparse==0.6.18+pt23cu121 
+      - -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
+      - torch-spline-conv==1.2.2+pt23cu121 
+      - torchmetrics==1.0.1
+      - tqdm==4.66.4
       - triton==3.2.0
-      - Sphinx                        
-      - sphinx-autobuild              
-      - sphinx-rtd-theme              
-      - sphinxcontrib-applehelp       
-      - sphinxcontrib-devhelp         
-      - sphinxcontrib-htmlhelp        
-      - sphinxcontrib-jquery          
-      - sphinxcontrib-jsmath          
-      - sphinxcontrib-qthelp          
-      - sphinxcontrib-serializinghtml 
-prefix: /home/Xenadon/miniconda3/envs/eqt_mini
+      - urllib3==2.2.2
+      - uvicorn==0.30.6
+      - watchfiles==0.24.0
+      - websockets==13.1
+      - werkzeug==3.0.3
+      - yarl==1.9.4
+prefix: /home/wangtong/miniconda3/envs/equitorch
