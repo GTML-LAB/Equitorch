@@ -30,17 +30,17 @@ dependencies:
       - networkx==3.3
       - numpy==2.2.6
       - psutil==7.0.0
-      - pyg-lib
+      - pyg-lib -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
       - pyparsing==3.2.3
       - scikit-learn==1.6.1
       - scipy==1.15.3
       - sympy==1.13.3
       - torch==2.4.0+cu124
-      - torch-cluster
+      - torch-cluster -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
       - torch-geometric==2.4.0
-      - torch-scatter
-      - torch-sparse
-      - torch-spline-conv
+      - torch-scatter -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
+      - torch-sparse -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
+      - torch-spline-conv -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
       - triton==3.2.0
       - Sphinx                        
       - sphinx-autobuild              
