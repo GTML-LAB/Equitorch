@@ -11,7 +11,7 @@ Equitorch documentation
 .. image:: ./_static/logo_wide.png
 
 
-This is **Equitorch**, a modularized package for flexibily constructing equivariant (and invariant) neural networks with Triton_ accelerated operators.
+This is **Equitorch**, a modularized package for flexibily constructing O(3)/SO(3) equivariant (and invariant) neural networks with Triton_ accelerated operators.
 
 Github pages: `<https://github.com/GTML-LAB/Equitorch>`_
 

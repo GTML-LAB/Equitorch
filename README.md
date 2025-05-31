@@ -2,7 +2,7 @@
 
 ![Equitorch_logo](./img/logo_wide.png)
 
-*Equitorch* is a modularized package that can be used to flexibly constructing equivariant neural networks.
+*Equitorch* is a modularized package that can be used to flexibly constructing O(3)/SO(3) equivariant neural networks.
 
 **[Github Pages](https://github.com/GTML-LAB/Equitorch/tree/main)**
 
@@ -10,10 +10,6 @@
 
 > This package is still under development. 
 > We are actively adding more operations, documentations and tutorials.
-
-In this package, we implemented many basic operators that may need in equivariant neural networks, currently including:
-
-
 
 ### Installation
 
